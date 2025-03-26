@@ -1,3 +1,108 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Sparkles, Github, Linkedin, Mail } from 'lucide-react';
+
+export default function Portfolio() {
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-zinc-900 to-black text-white dark:text-white px-4 py-8">
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.img
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          src="/profile.jpg"
+          alt="Hari Krishna"
+          className="mx-auto rounded-full border-4 border-yellow-400 w-40 h-40 object-cover mb-4"
+        />
+        <h1 className="text-4xl font-extrabold tracking-tight">S Hari Krishna</h1>
+        <p className="mt-2 text-lg text-zinc-300">
+          Senior DevOps Engineer – AI & MLOps Specialist
+        </p>
+        <div className="flex justify-center gap-4 mt-4">
+          <a href="https://www.linkedin.com/in/hari-devops" target="_blank"><Linkedin /></a>
+          <a href="mailto:s.harikrishna.5519@gmail.com" target="_blank"><Mail /></a>
+          <a href="https://github.com/haridevops05" target="_blank"><Github /></a>
+        </div>
+        <Button className="mt-6 bg-yellow-400 text-black font-bold" asChild>
+          <a href="https://raw.githubusercontent.com/haridevops05/devopshari.github.io/master/HariKrishna2024.pdf" target="_blank">
+            Download Resume
+          </a>
+        </Button>
+        <Button className="ml-4" variant="outline" onClick={toggleTheme}>
+          Toggle Theme
+        </Button>
+      </div>
+
+      {/* About Me */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <p className="text-zinc-300">
+          I’m a passionate Senior DevOps & MLOps Engineer focused on building AI-driven, scalable, and automated infrastructure using AWS, Azure, Kubernetes, Terraform, Python, and Generative AI. I integrate cloud-native CI/CD pipelines and deploy ML models at scale to enable intelligent automation systems.
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-4">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+          {['AWS', 'Python', 'MLOps', 'DevOps Tools', 'Generative AI', 'Terraform', 'Docker', 'Kubernetes'].map((skill, i) => (
+            <Card key={i} className="bg-zinc-800 shadow-xl hover:scale-105 transition-all">
+              <CardContent className="py-6 font-semibold text-lg">{skill}</CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-4">Projects</h2>
+        <div className="space-y-6">
+          <Card className="bg-zinc-800 shadow-xl hover:scale-[1.01] transition-all">
+            <CardContent className="py-6">
+              <h3 className="text-xl font-bold text-yellow-400">AI-Driven MLOps Pipeline on AWS</h3>
+              <p className="mt-2 text-zinc-300">
+                Architected and deployed a fully automated MLOps pipeline on AWS integrating SageMaker, Lambda, S3, and CodePipeline. The system continuously trained and deployed ML models using CI/CD, with dynamic model versioning, performance-based rollbacks, and real-time monitoring using CloudWatch and Prometheus. Reduced model release time by 60% while ensuring enterprise-grade scalability and reliability.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-zinc-800 shadow-xl hover:scale-[1.01] transition-all">
+            <CardContent className="py-6">
+              <h3 className="text-xl font-bold text-yellow-400">AI-Powered Cloud Monitoring & Auto-Healing</h3>
+              <p className="mt-2 text-zinc-300">
+                Engineered a next-gen cloud observability platform with integrated AI that auto-detects anomalies and initiates self-healing procedures using AWS Lambda, CloudWatch, and SNS alerts. Deployed Kubernetes clusters with Grafana dashboards and alerting systems. Enabled zero-downtime recovery, proactive issue prevention, and reduced MTTR by 70% across production workloads.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-zinc-800 shadow-xl hover:scale-[1.01] transition-all">
+            <CardContent className="py-6">
+              <h3 className="text-xl font-bold text-yellow-400">Neuro Shield</h3>
+              <p className="mt-2 text-zinc-300">
+                AI-powered PC Diagnoser that auto-fixes system issues with real-time 3D monitoring, holographic UI, and voice assistant. Built with next-gen automation features to detect, resolve, and report system anomalies with zero human intervention.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <footer className="text-center mt-24 py-6 text-sm text-zinc-500">
+        &copy; {new Date().getFullYear()} Hari Krishna | All Rights Reserved
+      </footer>
+    </main>
+  );
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
