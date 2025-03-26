@@ -1,18 +1,51 @@
-JohnDoe Free Bootstrap landing page for personal and commercial use. Designed with ♥️ and creativity by Devcrud.com 
+# 🚀 Hari Krishna – DevOps & MLOps Portfolio Website
 
-Product Page: https://wwww.devcrud.com/
+Welcome to the official portfolio of **S Hari Krishna**, a Senior DevOps Engineer & MLOps Specialist. This project is a custom-built HTML + CSS website to showcase professional experience, skills, and high-impact AI-powered DevOps projects.
 
-Credits:
+---
 
-    Demo Images:
-        Unsplash:       	(https://www.unsplash.com)
+## 🌟 Live Features
 
-    Icons:
-		Themify Icons: 		(https://themify.me/themify-icons)
+- ⚙️ Showcases DevOps, MLOps, Cloud, and AI expertise
+- 🧠 Projects with real-world enterprise architecture
+- 📱 Fully responsive (mobile/tablet/desktop)
+- ✨ Modern UI with hover effects and neon highlights
+- 📄 Resume download button
+- 📧 Personal contact information
+- 🔥 Zero frameworks – 100% HTML + CSS only!
 
-	Other:
-		JQuery: 			(https://www.jquery.com)
-		Bootstrap: 			(https://www.getbootstrap.com)
-		Bootstrap Affix: 	(http://getbootstrap.com/javascript/#affix)  
-		Isotope: 			(https://isotope.metafizzy.co/) 
-		Google Maps:		(https://maps.google.com)
+---
+
+## 📂 Folder Structure
+
+📁 root/ ├── index.html ├── profile.jpg (Place your image here) ├── README.md
+
+
+---
+
+## 🛠️ How to Use
+
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/haridevops05/devops-portfolio.git
+
+🌐 Hosting It Live:
+You can deploy it easily using:
+
+1.GitHub Pages
+2.Netlify
+3.Vercel
+
+📞 Contact:
+Email: s.harikrishna.5519@gmail.com
+Phone: +91 89789 92915
+LinkedIn: linkedin.com/in/hari-devops
+GitHub: github.com/haridevops05
+
+🙏 Credits
+Designed and developed by S Hari Krishna – Built with 💻 HTML + CSS (No frameworks, no JS libraries)
+
+🛡 License
+This project is licensed for personal use and learning. For commercial adaptation, reach out via email.
+
+
