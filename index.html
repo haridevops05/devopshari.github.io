@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hari Krishna | DevOps & MLOps Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     .marquee {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
 
-.marquee p {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 12s linear infinite;
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  font-weight: 600;
-}
+    .marquee p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
 
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
     * {
       margin: 0;
@@ -92,9 +93,11 @@
       font-size: 2.5rem;
       font-weight: 800;
     }
-    header p {
+    .typed-text {
       font-size: 1.2rem;
       color: #cbd5e1;
+      font-weight: 600;
+      margin-top: 10px;
     }
     .btn {
       display: inline-block;
@@ -187,9 +190,9 @@
     <header id="home">
       <img src="assets/imgs/profile.jpg" alt="Hari Krishna">
       <h1>S Hari Krishna</h1>
-      <div class="marquee">
-  <p>Senior DevOps Engineer – AI & MLOps Specialist 🚀</p>
-</div>
+      <div class="typed-text">
+        I'm <span class="typed" data-typed-items="Senior DevOps Engineer – AI & MLOps Specialist"></span>
+      </div>
       <a class="btn" href="HariKrishna2024.pdf" target="_blank">Download Resume</a>
     </header>
 
@@ -292,5 +295,20 @@
       &copy; 2025 Hari Krishna | All Rights Reserved
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const typedEl = document.querySelector('.typed');
+      if (typedEl) {
+        new Typed('.typed', {
+          strings: typedEl.getAttribute('data-typed-items').split(',') || ['Senior DevOps Engineer – AI & MLOps Specialist'],
+          typeSpeed: 60,
+          backSpeed: 30,
+          backDelay: 2000,
+          loop: true
+        });
+      }
+    });
+  </script>
 </body>
 </html>
