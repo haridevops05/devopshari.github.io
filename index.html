@@ -11,11 +11,46 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #f1f5f9;
-      overflow-x: hidden;
+      display: flex;
+    }
+    nav {
+      width: 220px;
+      background: #111827;
+      padding: 40px 20px;
+      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    nav h2 {
+      font-size: 1.4rem;
+      color: #facc15;
+      margin-bottom: 30px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin-bottom: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+    .main-content {
+      margin-left: 240px;
+      width: calc(100% - 240px);
     }
     header {
       text-align: center;
@@ -55,8 +90,8 @@
       box-shadow: 0 0 15px #facc15;
     }
     section {
-      padding: 60px 20px;
-      max-width: 1280px;
+      padding: 60px 40px;
+      max-width: 1200px;
       margin: auto;
     }
     h2 {
@@ -66,12 +101,9 @@
       border-left: 4px solid #facc15;
       padding-left: 12px;
     }
-    ul {
-      padding-left: 20px;
-    }
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
     .info-card, .exp-card, .project-card, .skill-box, .cert-card {
@@ -85,14 +117,8 @@
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(250,204,21,0.3);
     }
-    .exp-card h3, .project-card h3, .cert-card h3 {
-      color: #facc15;
-      margin-bottom: 10px;
-    }
-    .exp-card p, .info-card p, .project-card p, .cert-card p {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      white-space: pre-line;
+    ul {
+      padding-left: 20px;
     }
     .skills-grid {
       display: grid;
@@ -104,6 +130,14 @@
       font-weight: 600;
       padding: 16px 0;
     }
+    .map {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -114,127 +148,71 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna">
-    <h1>S Hari Krishna</h1>
-    <p>Senior DevOps Engineer – AI & MLOps Specialist</p>
-    <a class="btn" href="HariKrishna2024.pdf" target="_blank">Download Resume</a>
-  </header>
+  <nav>
+    <h2>Navigate</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#map">Map</a></li>
+    </ul>
+  </nav>
+  <div class="main-content">
+    <header id="home">
+      <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna">
+      <h1>S Hari Krishna</h1>
+      <p>Senior DevOps Engineer – AI & MLOps Specialist</p>
+      <a class="btn" href="HariKrishna2024.pdf" target="_blank">Download Resume</a>
+    </header>
 
-  <section class="grid-2">
-    <div>
+    <section id="about">
       <h2>About Me</h2>
-      <div class="info-card">
-        <p>🚀 <strong>AI-Driven DevOps & MLOps Solutions for the Future</strong></p>
-        <p>Building intelligent, scalable, and fully automated cloud infrastructures using <strong>AWS, Azure, Kubernetes, Terraform, Python</strong>, and cutting-edge <strong>Generative AI</strong>.</p>
-        <p>From cloud-native CI/CD pipelines to end-to-end MLOps and LLM integration, I help businesses accelerate DevOps with AI at the core.</p>
-        <p>💼 <strong>Professional Overview</strong></p>
-        <ul>
-          <li>Senior DevOps & MLOps Engineer passionate about unifying DevOps and AI.</li>
-          <li>Expert in: <strong>AWS, Azure, Kubernetes, Docker, Terraform, Python, Linux</strong></li>
-          <li>✔️ Building scalable, cloud-native architectures</li>
-          <li>✔️ Automating CI/CD pipelines</li>
-          <li>✔️ Implementing MLOps for full model lifecycle</li>
-          <li>✔️ Integrating Generative AI & LLMs into pipelines</li>
-          <li>✔️ End-to-end automation for infrastructure, AI, and cloud optimization</li>
-        </ul>
-        <p>⚙️ <strong>Services / What I Do</strong></p>
-        <ul>
-          <li>🔧 DevOps Engineering – CI/CD, Infra as Code, Monitoring</li>
-          <li>☁️ Cloud Automation – AWS & Azure</li>
-          <li>🤖 MLOps – Model Deployment, Monitoring & Scaling</li>
-          <li>🧠 Generative AI & LLM Integration</li>
-          <li>🐳 Docker & Kubernetes Orchestration</li>
-          <li>📜 Scripting – Python & Bash</li>
-          <li>🛠️ Infrastructure Automation – Terraform & Ansible</li>
-        </ul>
-      </div>
-    </div>
+      <!-- Your about section content here -->
+    </section>
 
-    <div>
+    <section id="experience">
       <h2>Experience</h2>
-      <div class="grid-2">
-        <div class="exp-card">
-          <h3>Senior DevOps Engineer – BRILLIO</h3>
-          <p>2022 – Present<br>Skills: AWS, Linux, Kubernetes, Jenkins, GitLab, Docker, Rancher, IAM</p>
-        </div>
-        <div class="exp-card">
-          <h3>DevOps Engineer – DOVER</h3>
-          <p>2020 – 2022<br>Skills: AWS, Jenkins, Maven, Git, GitHub, Linux</p>
-        </div>
-        <div class="exp-card">
-          <h3>Cloud Engineer Associate – IMPHASIS</h3>
-          <p>2019 – 2020<br>Skills: AWS, Linux, System Administration</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- Your experience content here -->
+    </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-box">AWS</div>
-      <div class="skill-box">Python</div>
-      <div class="skill-box">MLOps</div>
-      <div class="skill-box">DevOps Tools</div>
-      <div class="skill-box">Generative AI</div>
-      <div class="skill-box">Terraform</div>
-      <div class="skill-box">Docker</div>
-      <div class="skill-box">Kubernetes</div>
-    </div>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <!-- Your skills content here -->
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="grid-2">
-      <div class="project-card">
-        <h3>AI-Driven MLOps Pipeline on AWS</h3>
-        <p>Architected and deployed a fully automated MLOps pipeline using SageMaker, Lambda, S3, and CodePipeline with CI/CD, model versioning, rollbacks, and real-time monitoring using CloudWatch and Prometheus.</p>
-      </div>
-      <div class="project-card">
-        <h3>AI-Powered Cloud Monitoring & Auto-Healing</h3>
-        <p>Built an AI-based observability platform that detects anomalies and triggers auto-healing with Lambda & SNS. Deployed Kubernetes clusters with Grafana dashboards, reducing MTTR by 70%.</p>
-      </div>
-      <div class="project-card">
-        <h3>Neuro Shield</h3>
-        <p>AI-powered PC Diagnoser that detects and resolves system issues using 3D monitoring, holographic UI, and neural voice assistants — built for next-gen automation.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <!-- Your projects content here -->
+    </section>
 
-  <section>
-    <h2>Certifications</h2>
-    <div class="cert-card">
-      <h3>AWS Certified Solutions Architect – Professional</h3>
-      <p><strong>Validation Number:</strong> d2a80620a35b4ffb86721154af7a8361</p>
-      <p><strong>Validate At:</strong> <a href="https://aws.amazon.com/verification" style="color:#38bdf8" target="_blank">AWS Certification Verification</a></p>
-    </div>
-  </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <!-- Your certification content here -->
+    </section>
 
-  <section>
-    <h2>Personal Info</h2>
-    <div class="info-card">
-      <p><strong>Email:</strong> s.harikrishna.5519@gmail.com</p>
-      <p><strong>Phone:</strong> +91 89789 92915</p>
-      <p><strong>Address:</strong> Hyderabad, India</p>
-      <p><strong>Date of Birth:</strong> 05 April 1998</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hari-devops" style="color: #38bdf8;">linkedin.com/in/hari-devops</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/haridevops05" style="color: #38bdf8;">github.com/haridevops05</a></p>
-    </div>
-  </section>
-  <section>
-    <h2>📍 Location – Vijayawada</h2>
-    <iframe
-      class="map"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.046178842798!2d80.62576721486333!3d16.50617488862021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1122e3e2291%3A0xd0a4bb4f1a57678a!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1711822582761!5m2!1sen!2sin"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
+    <section id="contact">
+      <h2>Contact Info</h2>
+      <!-- Your contact info section content here -->
+    </section>
 
-  <footer>
-    &copy; 2025 Hari Krishna | All Rights Reserved
-  </footer>
+    <section id="map">
+      <h2>📍 Location – Vijayawada</h2>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.046178842798!2d80.62576721486333!3d16.50617488862021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1122e3e2291%3A0xd0a4bb4f1a57678a!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1711822582761!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <footer>
+      &copy; 2025 Hari Krishna | All Rights Reserved
+    </footer>
+  </div>
 </body>
 </html>
