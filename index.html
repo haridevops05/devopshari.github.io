@@ -374,8 +374,23 @@
             background: var(--dark-bg);
         }
 
-        
-        
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 0;
+            width: 500px;
+            height: 500px;
+            background: url('https://i.imgur.com/JDQ5i9c.png') no-repeat center/contain;
+            animation: floatImage 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px var(--neon-blue));
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-24px); }
+            100% { transform: translateY(0); }
+        }
+
         /* ===== ABOUT SECTION ===== */
         .about {
             padding: 150px 10% 100px;
@@ -507,6 +522,55 @@
             margin-bottom: 10px;
             color: var(--neon-blue);
         }
+        /* ===== SKILLS SECTION ===== */
+.skills {
+    padding: 150px 10% 100px;
+    background-color: rgba(10, 10, 20, 0.7);
+    position: relative;
+    text-align: center;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-category {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.skill-category h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-item {
+    background: rgba(10, 10, 20, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
         /* ===== EXPERIENCE SECTION ===== */
         .experience {
@@ -636,63 +700,6 @@
             font-size: 0.9rem;
             box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
         }
-        /* ===== SKILLS SECTION ===== */
-        /* Center the Technical Expertise heading */
-.skills h2.section-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 100%;
-}
-
-/* Center the category headings */
-.skill-category h3 {
-    text-align: center;
-    justify-content: center;
-}
-
-/* Center the skills grid */
-.skills-grid {
-    justify-items: center;
-}
-.skills {
-    padding: 150px 10% 100px;
-    background-color: rgba(10, 10, 20, 0.7);
-    position: relative;
-    text-align: center;
-}
-
-.skills-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.skill-category {
-    margin-bottom: 50px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.skill-category h3 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--neon-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-}
 
         /* ===== PROJECTS SECTION ===== */
         .projects {
@@ -1154,14 +1161,19 @@
         </nav>
     </header>
     
-                <h1>AI-Driven DevOps Architect</h1>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-pic">
+                <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna - DevOps Architect">
+            </div>
+            <h1>AI-Driven DevOps Architect</h1>
             <div class="typing-effect" id="typing-text"></div>
             <p>Building the future of cloud automation with cutting-edge AI integration. I specialize in creating intelligent infrastructure that scales, self-heals, and evolves.</p>
             <div class="btn-box">
                 <a href="#contact" class="cyber-btn primary-btn">Let's Connect</a>
                 <a href="#projects" class="cyber-btn">View Projects</a>
             </div>
-            
             <div class="resume-download">
                 <a href="HariKrishna2024" download class="resume-btn">
                     <span>Download Resume</span>
@@ -1260,9 +1272,8 @@
 
    <!-- ===== SKILLS SECTION ===== -->
 <section class="skills" id="skills">
-    <div class="section-header">
-        <h2 class="section-title">Technical <span>Expertise</span></h2>
-    </div>
+    <h2 class="section-title">Technical <span>Expertise</span></h2>
+    <div class="skills-container">
         <!-- DevOps Tools -->
         <div class="skill-category">
             <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
