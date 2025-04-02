@@ -248,6 +248,92 @@
             display: flex;
             gap: 20px;
         }
+        <!-- Add this in your Hero section (after the btn-box div) -->
+<div class="resume-download">
+    <a href="HariKrishna2024" download class="resume-btn">
+        <span>Download Resume</span>
+        <div class="download-icon">
+            <i class="fas fa-file-pdf"></i>
+            <i class="fas fa-download"></i>
+        </div>
+    </a>
+</div>
+
+<!-- CSS Styling -->
+<style>
+    .resume-download {
+        margin-top: 30px;
+        position: relative;
+    }
+    
+    .resume-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 25px;
+        background: rgba(0, 247, 255, 0.1);
+        border: 2px solid var(--neon-blue);
+        border-radius: 50px;
+        color: var(--neon-blue);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .resume-btn:hover {
+        background: rgba(0, 247, 255, 0.2);
+        box-shadow: 0 0 15px rgba(0, 247, 255, 0.4);
+        transform: translateY(-3px);
+    }
+    
+    .resume-btn span {
+        margin-right: 15px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .download-icon {
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .download-icon i {
+        position: absolute;
+        transition: all 0.4s ease;
+    }
+    
+    .download-icon .fa-file-pdf {
+        opacity: 1;
+    }
+    
+    .download-icon .fa-download {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    
+    .resume-btn:hover .fa-file-pdf {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    
+    .resume-btn:hover .fa-download {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Glow animation */
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 5px rgba(0, 247, 255, 0.5); }
+        50% { box-shadow: 0 0 20px rgba(0, 247, 255, 0.8); }
+        100% { box-shadow: 0 0 5px rgba(0, 247, 255, 0.5); }
+    }
+    
+    .resume-btn:hover {
+        animation: pulse-glow 1.5s infinite;
+    }
+</style>
 
         .cyber-btn {
             position: relative;
@@ -1036,7 +1122,8 @@
         </div>
         <div class="hero-image"></div>
     </section>
-    <!-- Option 1: Hero Section (Recommended) -->
+    
+    <!-- Option 1: Hero Section (Recommended) -->we need to remove this
 <section class="hero" id="home">
     <div class="hero-content">
         <!-- Add this before the h1 tag -->
@@ -1048,22 +1135,13 @@
     </div>
 </section>
 
-<!-- Option 2: About Section -->
-<section class="about" id="about">
-    <div class="about-content">
-        <div class="about-img">
-            <!-- Replace the existing img tag -->
-            <img src="assets/images/your-profile.jpg" alt="Hari Krishna">
-        </div>
-        ...
-    </div>
-</section>
+
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-content">
             <div class="about-img">
-                <img src="https://i.imgur.com/JDQ5i9c.png" alt="Hari Krishna - DevOps Engineer">
+                <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna - DevOps Architect">
             </div>
             <div class="about-text">
                 <h3>DevOps + AI = Future</h3>
@@ -1245,114 +1323,136 @@
 
 <!-- ===== PROJECTS SECTION ===== -->
 <section class="projects" id="projects">
-    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <h2 class="section-title">Project <span>Highlights</span></h2>
     <div class="projects-grid">
-        <!-- AWS MLOps Pipeline -->
+        <!-- Project 1 -->
         <div class="project-card">
             <div class="project-card-inner">
                 <div class="project-card-front">
-                    <img src="https://source.unsplash.com/600x400/?aws,mlops" alt="AWS MLOps Pipeline">
+                    <img src="https://source.unsplash.com/600x400/?aws,sagemaker,ai" alt="AWS MLOps Pipeline">
                     <div class="project-info">
                         <h3>AWS MLOps Pipeline</h3>
+                        <div class="project-meta">
+                            <span class="company">Innominds Software</span>
+                            <span class="role">Senior DevOps Engineer</span>
+                        </div>
                         <div class="project-tech">
                             <span>SageMaker</span>
-                            <span>Lambda</span>
-                            <span>TFX</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card-back">
-                    <h3>AWS MLOps Pipeline</h3>
-                    <p>End-to-end ML pipeline handling 50+ daily model deployments with automated monitoring</p>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <span>Models Deployed</span>
-                            <span>50+/day</span>
-                        </div>
-                        <div class="stat-item">
-                            <span>Accuracy</span>
-                            <span>99.2%</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-aws"></i> Architecture</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Pipeline Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Kubernetes ML Serving -->
-        <div class="project-card">
-            <div class="project-card-inner">
-                <div class="project-card-front">
-                    <img src="https://source.unsplash.com/600x400/?kubernetes,ai" alt="K8s ML Serving">
-                    <div class="project-info">
-                        <h3>K8s ML Serving</h3>
-                        <div class="project-tech">
-                            <span>Kubeflow</span>
+                            <span>Kubernetes</span>
+                            <span>Terraform</span>
                             <span>Prometheus</span>
-                            <span>Istio</span>
                         </div>
                     </div>
                 </div>
                 <div class="project-card-back">
-                    <h3>Kubernetes ML Serving</h3>
-                    <p>Scalable model serving platform handling 10K RPS with 99.99% availability</p>
+                    <h3><i class="fab fa-aws"></i> MLOps Automation</h3>
+                    <ul class="project-contributions">
+                        <li>Automated end-to-end model training/deployment reducing manual effort by <strong>70%</strong></li>
+                        <li>CI/CD pipeline improved model accuracy by <strong>15%</strong></li>
+                        <li>Real-time monitoring reduced incidents by <strong>40%</strong></li>
+                    </ul>
                     <div class="project-stats">
                         <div class="stat-item">
-                            <span>Throughput</span>
-                            <span>10K RPS</span>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>60% Faster Rollout</span>
                         </div>
                         <div class="stat-item">
-                            <span>Latency</span>
-                            <span><50ms</span>
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>30% Cost Savings</span>
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-chart-bar"></i> Metrics</a>
-                        <a href="#" class="project-link"><i class="fab fa-docker"></i> Containers</a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-book"></i> Case Study
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- DevSecOps Automation -->
+        <!-- Project 2 -->
         <div class="project-card">
             <div class="project-card-inner">
                 <div class="project-card-front">
-                    <img src="https://source.unsplash.com/600x400/?security,automation" alt="DevSecOps Automation">
+                    <img src="https://source.unsplash.com/600x400/?monitoring,dashboard,cloud" alt="Cloud Monitoring System">
                     <div class="project-info">
-                        <h3>DevSecOps Automation</h3>
+                        <h3>AI Cloud Monitoring</h3>
+                        <div class="project-meta">
+                            <span class="company">Deloitte</span>
+                            <span class="role">Cloud Engineer</span>
+                        </div>
                         <div class="project-tech">
-                            <span>Trivy</span>
-                            <span>Ansible</span>
-                            <span>GitHub Actions</span>
+                            <span>Grafana</span>
+                            <span>AWS Lambda</span>
+                            <span>Kubernetes</span>
+                            <span>Datadog</span>
                         </div>
                     </div>
                 </div>
                 <div class="project-card-back">
-                    <h3>Security Automation</h3>
-                    <p>Shift-left security implementation catching 200+ vulnerabilities in CI/CD pipelines</p>
+                    <h3><i class="fas fa-heartbeat"></i> Auto-Healing System</h3>
+                    <ul class="project-contributions">
+                        <li>Reduced MTTR by <strong>50%</strong> with real-time monitoring</li>
+                        <li>AI anomaly detection for <strong>90%+</strong> CPU spikes</li>
+                        <li>Automated healing improved uptime to <strong>99.95%</strong></li>
+                    </ul>
                     <div class="project-stats">
                         <div class="stat-item">
-                            <span>Vulnerabilities</span>
-                            <span>200+ Caught</span>
+                            <i class="fas fa-chart-line"></i>
+                            <span>20% Cost Reduction</span>
                         </div>
                         <div class="stat-item">
-                            <span>Scan Time</span>
-                            <span>78s Avg</span>
+                            <i class="fas fa-clock"></i>
+                            <span>$150K/yr Saved</span>
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-shield-alt"></i> Report</a>
-                        <a href="#" class="project-link"><i class="fab fa-jenkins"></i> Pipeline</a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-project-diagram"></i> Architecture
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Project 3 - Add your third project here if needed -->
     </div>
 </section>
+
+<!-- CSS Additions -->
+<style>
+    .project-meta {
+        margin: 10px 0;
+        font-size: 0.9rem;
+    }
+    .company {
+        color: var(--neon-blue);
+        font-weight: 600;
+        margin-right: 15px;
+    }
+    .role {
+        color: var(--light);
+        opacity: 0.8;
+    }
+    .project-contributions {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+    .project-contributions li {
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .project-contributions li:before {
+        content: "▹";
+        color: var(--neon-blue);
+        position: absolute;
+        left: -20px;
+    }
+    .stat-item i {
+        color: var(--neon-blue);
+        margin-right: 8px;
+    }
+</style>
 
     <!-- ===== CONTACT SECTION ===== -->
     <section class="contact" id="contact">
