@@ -167,6 +167,39 @@
             color: var(--neon-blue);
             text-shadow: 0 0 10px var(--neon-blue);
         }
+        /* Profile Picture Styles */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 4px solid var(--neon-blue);
+    box-shadow: 0 0 25px var(--neon-blue);
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 10px;
+    transform: rotateY(15deg);
+    transition: var(--transition);
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
         /* ===== HERO SECTION ===== */
         .hero {
@@ -1003,7 +1036,28 @@
         </div>
         <div class="hero-image"></div>
     </section>
-    
+    <!-- Option 1: Hero Section (Recommended) -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <!-- Add this before the h1 tag -->
+        <div class="profile-pic">
+            <img src="assets/images/your-profile.jpg" alt="Hari Krishna - DevOps Architect">
+        </div>
+        <h1>AI-Driven DevOps Architect</h1>
+        ...
+    </div>
+</section>
+
+<!-- Option 2: About Section -->
+<section class="about" id="about">
+    <div class="about-content">
+        <div class="about-img">
+            <!-- Replace the existing img tag -->
+            <img src="assets/images/your-profile.jpg" alt="Hari Krishna">
+        </div>
+        ...
+    </div>
+</section>
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
         <h2 class="section-title">About <span>Me</span></h2>
