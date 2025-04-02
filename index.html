@@ -992,6 +992,18 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
         }
+        /* Add to your existing CSS */
+.fa-spinner {
+    margin-right: 8px;
+}
+
+.submit-btn .fa-check {
+    color: var(--matrix-green);
+}
+
+.submit-btn .fa-times {
+    color: #ff2d75;
+}
 
         /* ===== FOOTER ===== */
         footer {
@@ -1492,21 +1504,21 @@
 </a>
                 </div>
             </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-            </form>
+            <form action="https://formspree.io/f/s.harikrishna.5519@gmail.com" method="POST" class="contact-form">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="_replyto" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+</form>
         </div>
     </section>
 
@@ -1583,5 +1595,50 @@
         // Create initial shooting stars
         setInterval(createShootingStar, 5000);
     </script>
+    <script>
+        // Your existing JavaScript code (typing effect, header scroll, etc.)...
+
+        // ===== FORM SUBMISSION HANDLER =====
+        // Add this NEW code right after your existing JavaScript:
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                try {
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                        form.reset();
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error('Failed to send');
+                    }
+                } catch (error) {
+                    submitBtn.innerHTML = '<i class="fas fa-times"></i> Error';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }
+            });
+        }
+    </script>
+    
 </body>
 </html>
