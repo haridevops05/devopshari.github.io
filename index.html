@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari Krishna | AI-Driven DevOps Architect</title>
+    <title>Hari Krishna | AI DevOps Architect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
@@ -31,7 +31,48 @@
             line-height: 1.6;
         }
 
-        /* Cyberpunk Glow Effects */
+        /* ===== GALAXY SPACE BACKGROUND ===== */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            animation: starsMove 100s linear infinite;
+        }
+
+        @keyframes starsMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px var(--neon-blue);
+            animation: shootingStar 10s linear infinite;
+        }
+
+        @keyframes shootingStar {
+            0% { transform: translateX(0) translateY(0); opacity: 1; }
+            70% { opacity: 1; }
+            100% { transform: translateX(1000px) translateY(-500px); opacity: 0; }
+        }
+
+        /* ===== CYBERPUNK GLOW EFFECTS ===== */
         .glow {
             text-shadow: 0 0 10px var(--neon-blue), 
                          0 0 20px var(--neon-blue),
@@ -43,46 +84,7 @@
                        0 0 30px rgba(0, 247, 255, 0.3);
         }
 
-        /* Terminal-like Typing Effect */
-        .terminal-cursor {
-            display: inline-block;
-            width: 10px;
-            height: 24px;
-            background: var(--neon-blue);
-            margin-left: 5px;
-            animation: blink 1s infinite;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Animated Circuit Background */
-        .circuit-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: 
-                linear-gradient(135deg, var(--darker-bg) 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, var(--darker-bg) 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, var(--darker-bg) 25%, transparent 25%),
-                linear-gradient(45deg, var(--darker-bg) 25%, transparent 25%);
-            background-size: 100px 100px;
-            opacity: 0.3;
-            animation: circuitMove 60s linear infinite;
-        }
-
-        @keyframes circuitMove {
-            0% { background-position: 0 0, 0 0, 0 0, 0 0; }
-            100% { background-position: -2000px 0, -2000px 0, -2000px 0, -2000px 0; }
-        }
-
-        /* Header with Cyberpunk Nav */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
@@ -166,7 +168,7 @@
             text-shadow: 0 0 10px var(--neon-blue);
         }
 
-        /* Hero Section with 3D Effect */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -174,19 +176,11 @@
             padding: 0 10%;
             position: relative;
             overflow: hidden;
-            perspective: 1000px;
         }
 
         .hero-content {
             max-width: 800px;
             z-index: 1;
-            transform-style: preserve-3d;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-            50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
         }
 
         .hero-content h1 {
@@ -290,34 +284,10 @@
             100% { transform: translateY(0); }
         }
 
-        /* Animated Tech Stack */
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .tech-item {
-            padding: 8px 15px;
-            background: rgba(0, 247, 255, 0.1);
-            border: 1px solid var(--neon-blue);
-            border-radius: 30px;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .tech-item:hover {
-            background: var(--neon-blue);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
-        }
-
-        /* About Section with Interactive Skills */
+        /* ===== ABOUT SECTION ===== */
         .about {
             padding: 150px 10% 100px;
-            background-color: var(--darker-bg);
+            background-color: rgba(5, 5, 15, 0.7);
             position: relative;
             overflow: hidden;
         }
@@ -446,10 +416,10 @@
             color: var(--neon-blue);
         }
 
-        /* Experience Timeline with Holographic Effect */
+        /* ===== EXPERIENCE SECTION ===== */
         .experience {
             padding: 150px 10% 100px;
-            background-color: var(--dark-bg);
+            background-color: rgba(10, 10, 20, 0.7);
             position: relative;
         }
 
@@ -575,10 +545,10 @@
             box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
         }
 
-        /* Projects Section with 3D Flip Cards */
+        /* ===== PROJECTS SECTION ===== */
         .projects {
             padding: 150px 10% 100px;
-            background-color: var(--darker-bg);
+            background-color: rgba(5, 5, 15, 0.7);
         }
 
         .projects-grid {
@@ -715,10 +685,10 @@
             margin-right: 8px;
         }
 
-        /* Contact Section with Interactive Form */
+        /* ===== CONTACT SECTION ===== */
         .contact {
             padding: 150px 10% 100px;
-            background-color: var(--dark-bg);
+            background-color: rgba(10, 10, 20, 0.7);
             position: relative;
         }
 
@@ -859,85 +829,13 @@
             box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
         }
 
-        /* Footer with Animated Waves */
+        /* ===== FOOTER ===== */
         footer {
-            background: linear-gradient(to bottom, var(--dark-bg), #050510);
+            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), #050510);
             padding: 80px 10% 30px;
             position: relative;
             overflow: hidden;
-        }
-
-        .waves {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('assets/wave.svg') repeat-x;
-            background-size: 1000px 100px;
-            animation: wave 15s linear infinite;
-        }
-
-        .waves::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/wave.svg') repeat-x;
-            background-size: 1000px 100px;
-            opacity: 0.4;
-            animation: wave-reverse 10s linear infinite;
-        }
-
-        @keyframes wave {
-            0% { background-position-x: 0; }
-            100% { background-position-x: 1000px; }
-        }
-
-        @keyframes wave-reverse {
-            0% { background-position-x: 1000px; }
-            100% { background-position-x: 0; }
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--neon-blue);
-            font-family: 'Oxanium', sans-serif;
-        }
-
-        .footer-col p {
-            margin-bottom: 15px;
-        }
-
-        .quick-links {
-            list-style: none;
-        }
-
-        .quick-links li {
-            margin-bottom: 10px;
-        }
-
-        .quick-links a {
-            color: var(--light);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .quick-links a:hover {
-            color: var(--neon-blue);
-            transform: translateX(5px);
+            text-align: center;
         }
 
         .copyright {
@@ -948,7 +846,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 1200px) {
             .hero-image {
                 width: 400px;
@@ -1059,19 +957,19 @@
             nav ul {
                 display: none;
             }
-
-            .mobile-menu-btn {
-                display: block;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background Elements -->
-    <div class="circuit-bg"></div>
-    <div class="particles" id="particles"></div>
+    <!-- ===== GALAXY SPACE BACKGROUND ===== -->
+    <div class="space-bg">
+        <div class="stars"></div>
+        <div class="shooting-star" style="top: 20%; left: 10%; animation-delay: 2s;"></div>
+        <div class="shooting-star" style="top: 50%; left: 30%; animation-delay: 5s;"></div>
+        <div class="shooting-star" style="top: 70%; left: 60%; animation-delay: 8s;"></div>
+    </div>
     
-    <!-- Header with Navigation -->
+    <!-- ===== HEADER ===== -->
     <header id="header">
         <a href="#" class="logo">Hari<span>.</span></a>
         <nav>
@@ -1085,7 +983,7 @@
         </nav>
     </header>
     
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>AI-Driven DevOps Architect</h1>
@@ -1106,7 +1004,7 @@
         <div class="hero-image"></div>
     </section>
     
-    <!-- About Section -->
+    <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-content">
@@ -1159,7 +1057,7 @@
         </div>
     </section>
     
-    <!-- Experience Section -->
+    <!-- ===== EXPERIENCE SECTION ===== -->
     <section class="experience" id="experience">
         <h2 class="section-title">Professional <span>Journey</span></h2>
         <div class="timeline">
@@ -1186,160 +1084,216 @@
                     <h4>Freelance</h4>
                     <p>Implemented CI/CD pipelines and container orchestration solutions for startups, helping them scale from zero to millions of users.</p>
                 </div>
-                <!-- Add this right after the opening <body> tag -->
-<div class="cyber-bg">
-    <div class="grid-lines"></div>
-    <div class="holographic-effect"></div>
-    <div class="floating-dots"></div>
-</div>
-
-<style>
-/* Remove existing circuit-bg and add these new styles */
-.cyber-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(45deg, #0a0a12 0%, #1a1a2a 100%);
-    overflow: hidden;
-}
-
-.grid-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(0, 247, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 247, 255, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    animation: gridMove 40s linear infinite;
-}
-
-@keyframes gridMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 600px 600px; }
-}
-
-.holographic-effect {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, 
-        rgba(0, 247, 255, 0.1) 0%, 
-        rgba(188, 19, 254, 0.1) 30%, 
-        transparent 70%);
-    animation: hologramSpin 20s linear infinite;
-    opacity: 0.3;
-}
-
-@keyframes hologramSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.floating-dots {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='1' fill='%2300f7ff'/%3E%3C/svg%3E");
-    animation: dotsFloat 20s linear infinite;
-    opacity: 0.1;
-}
-
-@keyframes dotsFloat {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-}
-
-/* Update existing hero section to add depth */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-/* Add these media queries for better mobile performance */
-@media (max-width: 768px) {
-    .grid-lines {
-        background-size: 20px 20px;
-    }
+            </div>
+        </div>
+    </section>
     
-    .holographic-effect {
-        animation-duration: 30s;
-    }
-}
-</style>
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <img src="https://source.unsplash.com/random/600x400/?devops,aws" alt="AI-Powered MLOps Pipeline">
+                        <div class="project-info">
+                            <h3>AI-Powered MLOps Pipeline</h3>
+                            <div class="project-tech">
+                                <span>AWS SageMaker</span>
+                                <span>Kubernetes</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>AI-Powered MLOps Pipeline</h3>
+                        <p>Automated training/deployment pipeline with SageMaker, Lambda, CodePipeline, Prometheus, CloudWatch. 60% faster model rollout.</p>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span>Performance Boost</span>
+                                <span>60% Faster</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Cost Reduction</span>
+                                <span>40% Saved</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <img src="https://source.unsplash.com/random/600x400/?kubernetes,cloud" alt="Kubernetes Auto-Scaling">
+                        <div class="project-info">
+                            <h3>Kubernetes Auto-Scaling</h3>
+                            <div class="project-tech">
+                                <span>K8s</span>
+                                <span>Prometheus</span>
+                                <span>Terraform</span>
+                            </div>
+                        </div>
+                                    <!-- Add more project cards -->
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <img src="https://source.unsplash.com/random/600x400/?security,devops" alt="Security Automation">
+                        <div class="project-info">
+                            <h3>DevSecOps Pipeline</h3>
+                            <div class="project-tech">
+                                <span>Ansible</span>
+                                <span>Trivy</span>
+                                <span>GitHub Actions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>Security Automation</h3>
+                        <p>Implemented automated security scanning in CI/CD pipelines that identified 150+ vulnerabilities pre-production.</p>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span>Vulnerabilities Caught</span>
+                                <span>150+</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Scan Time</span>
+                                <span><2min</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Build the Future Together</h3>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>s.harikrishna.5519@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 89789 92915</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Hyderabad / Vijayawada, India</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/hari-devops" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/haridevops05" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Hari Krishna | AI DevOps Architect | All Rights Reserved</p>
+            <p>Made with <i class="fas fa-heart" style="color: #ff2d75;"></i> & <i class="fas fa-coffee" style="color: #6f4e37;"></i></p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Particle Background
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Typing Effect
+        const typingText = document.getElementById('typing-text');
+        const professions = [
+            'Cloud Automation Expert',
+            'MLOps Specialist',
+            'AI Pipeline Architect',
+            'DevOps Engineer'
+        ];
 
-        const particles = [];
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width + 20 || this.x < -20 ||
-                    this.y > canvas.height + 20 || this.y < -20) {
-                    this.reset();
-                }
-            }
-            draw() {
-                ctx.fillStyle = `rgba(0, 243, 255, ${this.size/3})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+        let professionIndex = 0;
+        let charIndex = 0;
+
+        function typeEffect() {
+            if (charIndex < professions[professionIndex].length) {
+                typingText.textContent += professions[professionIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, 100);
+            } else {
+                setTimeout(eraseEffect, 2000);
             }
         }
 
-        function initParticles() {
-            for (let i = 0; i < 100; i++) {
-                particles.push(new Particle());
+        function eraseEffect() {
+            if (charIndex > 0) {
+                typingText.textContent = professions[professionIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseEffect, 50);
+            } else {
+                professionIndex = (professionIndex + 1) % professions.length;
+                setTimeout(typeEffect, 500);
             }
         }
 
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            requestAnimationFrame(animateParticles);
-        }
+        // Init typing effect
+        typeEffect();
 
-        // Initialize
-        initParticles();
-        animateParticles();
-
-        // Scroll Animations
-        const skillBars = document.querySelectorAll('.skill-progress');
+        // Header Scroll Effect
         window.addEventListener('scroll', () => {
-            skillBars.forEach(bar => {
-                const rect = bar.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    const width = bar.dataset.level;
-                    bar.style.width = width + '%';
-                }
-            });
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
+
+        // Generate Shooting Stars
+        function createShootingStar() {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 10}s`;
+            document.querySelector('.space-bg').appendChild(star);
+            
+            star.addEventListener('animationend', () => {
+                star.remove();
+            });
+        }
+
+        // Create initial shooting stars
+        setInterval(createShootingStar, 5000);
     </script>
 </body>
 </html>
