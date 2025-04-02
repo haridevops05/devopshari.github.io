@@ -3,194 +3,1189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S Hari Krishna | AI DevOps Architect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Hari Krishna | AI-Driven DevOps Architect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon-blue: #00f3ff;
+            --neon-blue: #00f7ff;
             --cyber-purple: #bc13fe;
             --matrix-green: #0aff0a;
             --dark-bg: #0a0a12;
+            --darker-bg: #05050a;
+            --light: #f0f0f0;
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Oxanium', sans-serif;
+            font-family: 'Rajdhani', 'Oxanium', sans-serif;
         }
-
+        
         body {
-            background: var(--dark-bg);
-            color: #fff;
+            background-color: var(--dark-bg);
+            color: var(--light);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        #particles-canvas {
+        /* Cyberpunk Glow Effects */
+        .glow {
+            text-shadow: 0 0 10px var(--neon-blue), 
+                         0 0 20px var(--neon-blue),
+                         0 0 30px var(--cyber-purple);
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 15px var(--neon-blue),
+                       0 0 30px rgba(0, 247, 255, 0.3);
+        }
+
+        /* Terminal-like Typing Effect */
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 24px;
+            background: var(--neon-blue);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Animated Circuit Background */
+        .circuit-bg {
             position: fixed;
             top: 0;
             left: 0;
-            z-index: -1;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                linear-gradient(135deg, var(--darker-bg) 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, var(--darker-bg) 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, var(--darker-bg) 25%, transparent 25%),
+                linear-gradient(45deg, var(--darker-bg) 25%, transparent 25%);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            animation: circuitMove 60s linear infinite;
         }
 
-        .cyber-border {
+        @keyframes circuitMove {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: -2000px 0, -2000px 0, -2000px 0, -2000px 0; }
+        }
+
+        /* Header with Cyberpunk Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(10, 10, 18, 0.8);
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 15px 10%;
+            background-color: rgba(5, 5, 10, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 247, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--light);
+            transition: var(--transition);
+            font-family: 'Oxanium', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            color: var(--neon-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
             position: relative;
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 15px var(--neon-blue);
         }
 
-        .cyber-border::before {
+        nav ul li a {
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--light);
+            padding: 5px 0;
+            transition: var(--transition);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        nav ul li a::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 2px solid var(--cyber-purple);
-            z-index: -1;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            transition: var(--transition);
         }
 
-        /* Hero Section */
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Hero Section with 3D Effect */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
-            background: linear-gradient(45deg, #0a0a1277, #000000aa),
-                        url('assets/cyber-grid.png');
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
         }
 
         .hero-content {
-            position: relative;
+            max-width: 800px;
             z-index: 1;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .cyber-title {
-            font-size: 4rem;
-            text-shadow: 0 0 15px var(--neon-blue);
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
             background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+            font-family: 'Oxanium', sans-serif;
         }
 
-        /* Animated Skill Bars */
-        .skill-bar {
-            background: #1a1a25;
-            border-radius: 4px;
-            margin: 1rem 0;
-            padding: 3px;
+        .typing-effect {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            height: 2.5rem;
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .btn-box {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cyber-btn {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 180px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            z-index: 1;
+            overflow: hidden;
+            transition: var(--transition);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .cyber-btn:hover {
+            color: var(--dark-bg);
+            text-shadow: 0 0 5px var(--dark-bg);
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .cyber-btn:hover::before {
+            width: 100%;
+        }
+
+        .primary-btn {
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            color: var(--dark-bg);
+        }
+
+        .primary-btn::before {
+            background: var(--dark-bg);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 0;
+            width: 500px;
+            height: 500px;
+            background: url('https://i.imgur.com/JDQ5i9c.png') no-repeat center/contain;
+            animation: floatImage 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px var(--neon-blue));
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-24px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Animated Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .tech-item {
+            padding: 8px 15px;
+            background: rgba(0, 247, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .tech-item:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+        }
+
+        /* About Section with Interactive Skills */
+        .about {
+            padding: 150px 10% 100px;
+            background-color: var(--darker-bg);
             position: relative;
             overflow: hidden;
         }
 
-        .skill-progress {
-            height: 25px;
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .section-title span {
+            color: var(--neon-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
             background: linear-gradient(90deg, var(--neon-blue), var(--cyber-purple));
-            width: 0;
-            transition: width 1.5s ease-in-out;
-            border-radius: 2px;
         }
 
-        /* Holographic Project Cards */
-        .project-card {
-            background: #11111a;
-            border: 1px solid #252535;
-            transform-style: preserve-3d;
-            transition: 0.4s;
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
             position: relative;
+            perspective: 1000px;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-            box-shadow: 0 0 30px var(--neon-blue);
-        }
-
-        .project-card::before {
+        .about-img::before {
             content: '';
             position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--neon-blue);
+            border-radius: 10px;
+            top: 20px;
+            left: 20px;
             z-index: -1;
-            filter: blur(20px);
+            opacity: 0.7;
         }
 
-        /* Cyber Timeline */
-        .timeline {
-            border-left: 3px solid var(--neon-blue);
-            position: relative;
-            padding-left: 2rem;
+        .about-img img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            transform: rotateY(15deg);
+            transition: var(--transition);
+            box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
         }
 
-        .timeline-node {
-            position: relative;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #11111a;
+        .about-img:hover img {
+            transform: rotateY(0deg);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .skills-container {
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            margin-bottom: 30px;
+        }
+
+        .skill-category h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h4 i {
+            margin-right: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid rgba(0, 247, 255, 0.2);
             border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: default;
         }
 
-        .timeline-node::before {
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.2);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+        }
+
+        /* Experience Timeline with Holographic Effect */
+        .experience {
+            padding: 150px 10% 100px;
+            background-color: var(--dark-bg);
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .timeline::before {
             content: '';
             position: absolute;
-            left: -2.6rem;
-            top: 1rem;
-            width: 20px;
-            height: 20px;
-            background: var(--cyber-purple);
+            width: 4px;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--cyber-purple));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--cyber-purple);
+            top: 15px;
+            z-index: 1;
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background: rgba(10, 10, 20, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 247, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                            transparent 0%, 
+                            rgba(0, 247, 255, 0.05) 50%, 
+                            transparent 100%);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover::before {
+            transform: translateX(100%);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 15px 35px rgba(0, 247, 255, 0.2);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .timeline-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .date {
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            color: var(--dark-bg);
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+        }
+
+        /* Projects Section with 3D Flip Cards */
+        .projects {
+            padding: 150px 10% 100px;
+            background-color: var(--darker-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .project-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .project-card:hover .project-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .project-card-front, 
+        .project-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card-front {
+            background-color: var(--dark-bg);
+            border: 1px solid rgba(0, 247, 255, 0.2);
+        }
+
+        .project-card-front img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .project-card-front .project-info {
+            padding: 20px;
+        }
+
+        .project-card-front h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .project-card-front .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-tech span {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            background: rgba(0, 247, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .project-card-back {
+            background: linear-gradient(45deg, var(--dark-bg), #111125);
+            transform: rotateY(180deg);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid var(--neon-blue);
+        }
+
+        .project-card-back h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .project-card-back p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .project-stats {
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .stat-item span:first-child {
+            color: var(--neon-blue);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background: rgba(0, 247, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 30px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+        }
+
+        .project-link i {
+            margin-right: 8px;
+        }
+
+        /* Contact Section with Interactive Form */
+        .contact {
+            padding: 150px 10% 100px;
+            background-color: var(--dark-bg);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/circuit-bg.png') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .contact-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-right: 20px;
+            width: 30px;
+        }
+
+        .info-item span {
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 247, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 50%;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+        }
+
+        .contact-form {
+            background: rgba(10, 10, 20, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--neon-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            border: none;
+            border-radius: 5px;
+            color: var(--dark-bg);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+        }
+
+        /* Footer with Animated Waves */
+        footer {
+            background: linear-gradient(to bottom, var(--dark-bg), #050510);
+            padding: 80px 10% 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waves {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('assets/wave.svg') repeat-x;
+            background-size: 1000px 100px;
+            animation: wave 15s linear infinite;
+        }
+
+        .waves::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/wave.svg') repeat-x;
+            background-size: 1000px 100px;
+            opacity: 0.4;
+            animation: wave-reverse 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1000px; }
+        }
+
+        @keyframes wave-reverse {
+            0% { background-position-x: 1000px; }
+            100% { background-position-x: 0; }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+
+        .quick-links {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .quick-links a:hover {
+            color: var(--neon-blue);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 247, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-image {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            header {
+                padding: 20px 5%;
+            }
+            
+            .hero,
+            .about,
+            .experience,
+            .projects,
+            .contact,
+            footer {
+                padding: 120px 5% 80px;
+            }
+            
+            .hero-image {
+                width: 350px;
+                height: 350px;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .typing-effect {
+                font-size: 1.5rem;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img {
+                margin-bottom: 40px;
+            }
+
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+
+            .left {
+                text-align: left;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .typing-effect {
+                font-size: 1.3rem;
+                height: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .btn-box {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cyber-btn {
+                width: 100%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <canvas id="particles-canvas"></canvas>
-
+    <!-- Animated Background Elements -->
+    <div class="circuit-bg"></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header with Navigation -->
+    <header id="header">
+        <a href="#" class="logo">Hari<span>.</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="cyber-title">S Hari Krishna</h1>
-            <div class="typing-effect" data-words='["DevOps Architect", "MLOps Engineer", "Cloud Automation Expert", "AI Pipeline Specialist"]'></div>
-            <div class="cyber-buttons">
-                <button class="cyber-button">View Projects</button>
-                <button class="cyber-button">Contact Me</button>
+            <h1>AI-Driven DevOps Architect</h1>
+            <div class="typing-effect" id="typing-text"></div>
+            <p>Building the future of cloud automation with cutting-edge AI integration. I specialize in creating intelligent infrastructure that scales, self-heals, and evolves.</p>
+            <div class="btn-box">
+                <a href="#contact" class="cyber-btn primary-btn">Let's Connect</a>
+                <a href="#projects" class="cyber-btn">View Projects</a>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-item">AWS</span>
+                <span class="tech-item">Kubernetes</span>
+                <span class="tech-item">Terraform</span>
+                <span class="tech-item">MLOps</span>
+                <span class="tech-item">Generative AI</span>
             </div>
         </div>
+        <div class="hero-image"></div>
     </section>
-
-    <!-- Skills Grid -->
-    <section class="skills-section">
-        <h2 class="section-title">Core Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon"><img src="aws-icon.svg" alt="AWS"></div>
-                <h3>Cloud Infrastructure</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="95"></div>
-                </div>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="https://i.imgur.com/JDQ5i9c.png" alt="Hari Krishna - DevOps Engineer">
             </div>
-            <!-- Add more skill cards -->
-        </div>
-    </section>
-
-    <!-- Project Showcase -->
-    <section class="projects-section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>AI-Powered MLOps Pipeline</h3>
-                    <div class="tech-stack">
-                        <span>AWS</span>
-                        <span>Kubernetes</span>
-                        <span>TensorFlow</span>
+            <div class="about-text">
+                <h3>DevOps + AI = Future</h3>
+                <p>I'm a Senior DevOps & MLOps Engineer with 5+ years of experience in architecting cloud-native solutions that leverage artificial intelligence to automate and optimize infrastructure at scale.</p>
+                <p>My unique approach combines traditional DevOps practices with cutting-edge AI techniques to create systems that are not just automated, but truly intelligent.</p>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud Expertise</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-server"></i>
+                                <span>Azure</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>GCP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4><i class="fas fa-robot"></i> AI/ML Integration</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <span>MLOps</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>LLM Pipelines</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>AI Monitoring</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p class="project-desc">Automated CI/CD pipeline reducing deployment time by 65%...</p>
-                <div class="project-hover">
-                    <button class="cyber-button">Case Study</button>
-                </div>
             </div>
         </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-title">Professional <span>Journey</span></h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="date">2022 - Present</div>
+                    <h3>Senior DevOps Engineer</h3>
+                    <h4>Innominds Software Pvt. Ltd</h4>
+                    <p>Leading AI-powered DevOps transformations, implementing MLOps pipelines that reduced model deployment time by 70% while improving accuracy monitoring.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="date">2019 - 2022</div>
+                    <h3>Cloud Engineer Associate</h3>
+                    <h4>Deloitte</h4>
+                    <p>Architected AWS cloud solutions for enterprise clients, automating infrastructure provisioning that saved 300+ engineering hours annually.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="date">2017 - 2019</div>
+                    <h3>DevOps Consultant</h3>
+                    <h4>Freelance</h4>
+                    <p>Implemented CI/CD pipelines and container orchestration solutions for startups, helping them scale from zero to millions of users.</p>
+                </div>
     </section>
 
     <script>
