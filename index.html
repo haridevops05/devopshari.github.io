@@ -1181,6 +1181,8 @@
             transform: translateY(-3px);
         }
     </style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- ===== GALAXY SPACE BACKGROUND ===== -->
@@ -1217,12 +1219,14 @@
                 <a href="#projects" class="cyber-btn">View Projects</a>
             </div>
             <div class="resume-download">
-                <a href="HariKrishna2024" download class="resume-btn">
-                    <span>Download Resume</span>
-                    <div class="download-icon">
-                        <i class="fas fa-file-pdf"></i>
-                        <i class="fas fa-download"></i>
-                    </div>
+    <a href="HariKrishna2024.pdf" download class="resume-btn">
+        <span>Download Resume</span>
+        <div class="download-icon">
+            <i class="fas fa-file-pdf"></i>
+            <i class="fas fa-download"></i>
+        </div>
+    </a>
+</div>
                 </a>
             </div>
             <div class="tech-stack">
@@ -1304,23 +1308,36 @@
             </div>
         </div>
     </section>
-   <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
 <section class="certifications" id="certifications">
     <h2 class="section-title">AWS <span>Certifications</span></h2>
-    <div class="certifications-grid">
-        <!-- AWS Solutions Architect Professional -->
-        <div class="certification-card professional">
-            <div class="certification-badge">
-                <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Professional_badge.5c083fa855fe82c1cf2d0c8b883c265ec72f17c0.png" 
-                     alt="AWS Solutions Architect Professional">
+    
+    <div class="certification-grid">
+        <!-- Solutions Architect Professional -->
+        <div class="certification-card">
+            <div class="cert-badge">
+                <img src="aws-solutions-architect-pro-badge.png" alt="AWS Certified Solutions Architect Professional">
+                <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i> Verified
+                </div>
             </div>
-            <div class="certification-info">
-                <h3>Solutions Architect</h3>
-                <p class="cert-level">PROFESSIONAL</p>
-                <p class="cert-id">Validation #: d2a80620a35b4ffb86721154af7a8361</p>
-                <a href="https://aws.amazon.com/verification" target="_blank" class="verify-btn">
-                    <i class="fas fa-external-link-alt"></i> Verify Credential
-                </a>
+            <div class="cert-details">
+                <h3>Solutions Architect - Professional</h3>
+                <div class="cert-meta">
+                    <span class="validation-id">
+                        <i class="fas fa-fingerprint"></i> d2a80620a35b4ffb86721154af7a8361
+                        <button class="copy-btn" data-clipboard-text="d2a80620a35b4ffb86721154af7a8361">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </span>
+                    <a href="https://aws.amazon.com/verification" target="_blank" class="verify-link">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
+                </div>
+                <div class="cert-footer">
+                    <span class="issue-date"><i class="far fa-calendar-alt"></i> Issued: May 2023</span>
+                    <span class="valid-until"><i class="fas fa-certificate"></i> Valid through May 2026</span>
+                </div>
             </div>
         </div>
     </div>
@@ -1424,56 +1441,53 @@
     </div>
 </section>
 
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section class="projects" id="projects">
-        <h2 class="section-title">Project <span>Highlights</span></h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-card-inner">
-                    <div class="project-card-front">
-                        <img src="https://source.unsplash.com/600x400/?aws,sagemaker,ai" alt="AWS MLOps Pipeline">
-                        <div class="project-info">
-                            <h3>AWS MLOps Pipeline</h3>
-                            <div class="project-meta">
-                                <span class="company">Innominds Software</span>
-                                <span class="role">Senior DevOps Engineer</span>
-                            </div>
-                            <div class="project-tech">
-                                <span>SageMaker</span>
-                                <span>Kubernetes</span>
-                                <span>Terraform</span>
-                                <span>Prometheus</span>
-                            </div>
-                        </div>
+  <!-- ===== PROJECTS SECTION ===== -->
+<section class="projects" id="projects">
+    <h2 class="section-title">Project <span>Highlights</span></h2>
+    
+    <!-- Project 1 - MLOps Pipeline -->
+    <div class="project-card">
+        <div class="project-card-inner">
+            <div class="project-card-front" style="background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%);">
+                <div class="project-tech-banner">
+                    <span>AWS SageMaker</span>
+                    <span>Kubernetes</span>
+                    <span>Terraform</span>
+                    <span>Prometheus</span>
+                </div>
+                <h3>AI-Driven MLOps Pipeline</h3>
+                <div class="project-meta">
+                    <span class="company">Innominds Software</span>
+                    <span class="role">Senior DevOps Engineer</span>
+                </div>
+                <div class="project-stats">
+                    <div><i class="fas fa-tachometer-alt"></i> 60% Faster</div>
+                    <div><i class="fas fa-dollar-sign"></i> 30% Savings</div>
+                </div>
+            </div>
+            <div class="project-card-back">
+                <h3><i class="fab fa-aws"></i> MLOps Transformation</h3>
+                <ul class="achievements">
+                    <li>Automated end-to-end model lifecycle reducing manual effort by 70%</li>
+                    <li>CI/CD pipeline improved model accuracy by 15%</li>
+                    <li>Real-time monitoring reduced incidents by 40%</li>
+                    <li>Containerized inference for hybrid cloud scalability</li>
+                </ul>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <div class="stat-value">99.95%</div>
+                        <div class="stat-label">Uptime</div>
                     </div>
-                    <div class="project-card-back">
-                        <h3><i class="fab fa-aws"></i> MLOps Automation</h3>
-                        <ul class="project-contributions">
-                            <li>Automated end-to-end model training/deployment reducing manual effort by <strong>70%</strong></li>
-                            <li>CI/CD pipeline improved model accuracy by <strong>15%</strong></li>
-                            <li>Real-time monitoring reduced incidents by <strong>40%</strong></li>
-                        </ul>
-                        <div class="project-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>60% Faster Rollout</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-dollar-sign"></i>
-                                <span>30% Cost Savings</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-book"></i> Case Study
-                            </a>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-value">$150K</div>
+                        <div class="stat-label">Annual Savings</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Project 2 -->
+               <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-card-inner">
                     <div class="project-card-front">
@@ -1576,8 +1590,7 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
+       <script>
         // Typing Effect
         const typingText = document.getElementById('typing-text');
         const professions = [
@@ -1641,6 +1654,7 @@
         // Create initial shooting stars
         setInterval(createShootingStar, 5000);
     </script>
+    
     <script>
         // Your existing JavaScript code (typing effect, header scroll, etc.)...
 
@@ -1684,6 +1698,27 @@
                 }
             });
         }
+    </script>
+     <script>
+        // Your existing JavaScript (typing effect, header scroll, etc.)...
+
+        // ===== COPY FUNCTIONALITY INITIALIZATION =====
+        // Add this NEW code right after your existing JavaScript:
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize clipboard.js
+            new ClipboardJS('.copy-btn');
+            
+            // Add visual feedback for copy buttons
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                    }, 2000);
+                });
+            });
+        });
     </script>
     
 </body>
