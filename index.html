@@ -512,104 +512,29 @@
             margin-bottom: 10px;
             color: var(--neon-blue);
         }
-        /* ===== CERTIFICATIONS SECTION ===== */
-.certifications {
-    padding: 150px 10% 100px;
-    background-color: rgba(5, 5, 15, 0.7);
-    position: relative;
+        /* Professional Certification Specific Styles */
+.certification-card.professional {
+    border: 1px solid var(--cyber-purple);
 }
 
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+.certification-card.professional:hover {
+    box-shadow: 0 15px 30px rgba(188, 19, 254, 0.3);
 }
 
-.certification-card {
-    background: rgba(10, 10, 20, 0.8);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 247, 255, 0.2);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
+.certification-card.professional .cert-level {
+    background: linear-gradient(45deg, var(--cyber-purple), #6a0dad);
+    color: white;
 }
 
-.certification-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 247, 255, 0.2);
-    border-color: var(--neon-blue);
-}
-
-.certification-badge {
-    padding: 30px;
-    background: linear-gradient(135deg, #05050a 0%, #0a0a12 100%);
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 247, 255, 0.1);
-}
-
-.certification-badge img {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 0 15px rgba(0, 247, 255, 0.4));
-}
-
-.certification-info {
-    padding: 25px;
-    flex-grow: 1;
-}
-
-.certification-info h3 {
-    font-size: 1.8rem;
-    color: var(--neon-blue);
-    margin-bottom: 10px;
-    font-family: 'Oxanium', sans-serif;
-}
-
-.cert-level {
-    font-size: 1.1rem;
-    color: var(--light);
-    background: rgba(0, 247, 255, 0.1);
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-}
-
-.cert-date {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
-}
-
-.verify-btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background: rgba(0, 247, 255, 0.1);
-    border: 1px solid var(--neon-blue);
-    border-radius: 30px;
-    color: var(--neon-blue);
-    text-decoration: none;
-    transition: var(--transition);
-    font-weight: 600;
-}
-
-.verify-btn:hover {
-    background: var(--neon-blue);
-    color: var(--dark-bg);
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .certifications {
-        padding: 100px 5% 80px;
-    }
-    
-    .certification-badge img {
-        width: 150px;
-    }
+.cert-id {
+    font-family: 'Courier New', monospace;
+    background: rgba(10, 10, 20, 0.9);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    word-break: break-all;
+    border-left: 3px solid var(--neon-blue);
 }
         /* ===== SKILLS SECTION ===== */
 .skills {
@@ -1379,33 +1304,23 @@
             </div>
         </div>
     </section>
-    <!-- ===== CERTIFICATIONS SECTION ===== -->
+   <!-- ===== CERTIFICATIONS SECTION ===== -->
 <section class="certifications" id="certifications">
     <h2 class="section-title">AWS <span>Certifications</span></h2>
     <div class="certifications-grid">
-        <!-- Solutions Architect -->
-        <div class="certification-card">
+        <!-- AWS Solutions Architect Professional -->
+        <div class="certification-card professional">
             <div class="certification-badge">
-                <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png" alt="AWS Solutions Architect Associate">
+                <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Professional_badge.5c083fa855fe82c1cf2d0c8b883c265ec72f17c0.png" 
+                     alt="AWS Solutions Architect Professional">
             </div>
             <div class="certification-info">
                 <h3>Solutions Architect</h3>
-                <p class="cert-level">ASSOCIATE</p>
-                <p class="cert-date">Earned: May 2023</p>
-                <a href="#" class="verify-btn">Verify Credential</a>
-            </div>
-        </div>
-
-        <!-- Developer -->
-        <div class="certification-card">
-            <div class="certification-badge">
-                <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Developer-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png" alt="AWS Developer Associate">
-            </div>
-            <div class="certification-info">
-                <h3>Developer</h3>
-                <p class="cert-level">ASSOCIATE</p>
-                <p class="cert-date">Earned: Sep 2022</p>
-                <a href="#" class="verify-btn">Verify Credential</a>
+                <p class="cert-level">PROFESSIONAL</p>
+                <p class="cert-id">Validation #: d2a80620a35b4ffb86721154af7a8361</p>
+                <a href="https://aws.amazon.com/verification" target="_blank" class="verify-btn">
+                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                </a>
             </div>
         </div>
     </div>
