@@ -512,98 +512,224 @@
             margin-bottom: 10px;
             color: var(--neon-blue);
         }
+
+        /* ===== CERTIFICATIONS SECTION ===== */
+        .certifications {
+            padding: 150px 10% 100px;
+            background-color: rgba(10, 10, 20, 0.7);
+            text-align: center;
+        }
+
+        .certification-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .certification-card {
+            background: rgba(10, 10, 20, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 15px 40px rgba(0, 247, 255, 0.2);
+        }
+
+        .cert-badge {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .cert-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            background: var(--matrix-green);
+            color: var(--dark-bg);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cert-details {
+            width: 100%;
+        }
+
+        .cert-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .cert-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .validation-id {
+            background: rgba(0, 247, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: none;
+            color: var(--neon-blue);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .verify-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .verify-link:hover {
+            text-decoration: underline;
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .issue-date, .valid-until {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         /* Professional Certification Specific Styles */
-.certification-card.professional {
-    border: 1px solid var(--cyber-purple);
-}
+        .certification-card.professional {
+            border: 1px solid var(--cyber-purple);
+        }
 
-.certification-card.professional:hover {
-    box-shadow: 0 15px 30px rgba(188, 19, 254, 0.3);
-}
+        .certification-card.professional:hover {
+            box-shadow: 0 15px 30px rgba(188, 19, 254, 0.3);
+        }
 
-.certification-card.professional .cert-level {
-    background: linear-gradient(45deg, var(--cyber-purple), #6a0dad);
-    color: white;
-}
+        .certification-card.professional .cert-level {
+            background: linear-gradient(45deg, var(--cyber-purple), #6a0dad);
+            color: white;
+        }
 
-.cert-id {
-    font-family: 'Courier New', monospace;
-    background: rgba(10, 10, 20, 0.9);
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin: 10px 0;
-    word-break: break-all;
-    border-left: 3px solid var(--neon-blue);
-}
         /* ===== SKILLS SECTION ===== */
-.skills {
-    padding: 150px 10% 100px;
-    background-color: rgba(10, 10, 20, 0.7);
-    position: relative;
-    text-align: center;
-}
+        .skills {
+            padding: 150px 10% 100px;
+            background-color: rgba(10, 10, 20, 0.7);
+            position: relative;
+            text-align: center;
+        }
 
-.skills-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.skill-category {
-    margin-bottom: 50px;
-    width: 100%;
-    max-width: 800px;
-}
+        .skill-category {
+            margin-bottom: 50px;
+            width: 100%;
+            max-width: 800px;
+        }
 
-.skill-category h3 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--neon-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
+        .skill-category h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--neon-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
 
-.skill-item {
-    background: rgba(10, 10, 20, 0.9);
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 247, 255, 0.3);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* Center the Technical Expertise heading */
-.skills h2.section-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 100%;
-}
+        .skill-item {
+            background: rgba(10, 10, 20, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* Center the category headings */
-.skill-category h3 {
-    text-align: center;
-    justify-content: center;
-}
+        /* Center the Technical Expertise heading */
+        .skills h2.section-title {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 100%;
+        }
 
-/* Center the skills grid */
-.skills-grid {
-    justify-items: center;
-}
+        /* Center the category headings */
+        .skill-category h3 {
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* Center the skills grid */
+        .skills-grid {
+            justify-items: center;
+        }
+
         /* ===== EXPERIENCE SECTION ===== */
         .experience {
             padding: 150px 10% 100px;
@@ -1017,17 +1143,17 @@
             box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
         }
         /* Add to your existing CSS */
-.fa-spinner {
-    margin-right: 8px;
-}
+        .fa-spinner {
+            margin-right: 8px;
+        }
 
-.submit-btn .fa-check {
-    color: var(--matrix-green);
-}
+        .submit-btn .fa-check {
+            color: var(--matrix-green);
+        }
 
-.submit-btn .fa-times {
-    color: #ff2d75;
-}
+        .submit-btn .fa-times {
+            color: #ff2d75;
+        }
 
         /* ===== FOOTER ===== */
         footer {
@@ -1124,10 +1250,29 @@
 
             .left {
                 text-align: left;
-            }
-
+           
+       @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .certification-card {
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .cert-badge {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cert-details h3 {
+                font-size: 1.5rem;
+            }
+            
+            .cert-footer {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -1181,8 +1326,8 @@
             transform: translateY(-3px);
         }
     </style>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- ===== GALAXY SPACE BACKGROUND ===== -->
@@ -1197,15 +1342,15 @@
     <header id="header">
         <a href="#" class="logo">Hari <span>Krishna</span></a>
         <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
     <!-- ===== HERO SECTION ===== -->
@@ -1219,14 +1364,12 @@
                 <a href="#projects" class="cyber-btn">View Projects</a>
             </div>
             <div class="resume-download">
-    <a href="HariKrishna2024.pdf" download class="resume-btn">
-        <span>Download Resume</span>
-        <div class="download-icon">
-            <i class="fas fa-file-pdf"></i>
-            <i class="fas fa-download"></i>
-        </div>
-    </a>
-</div>
+                <a href="HariKrishna2024.pdf" download class="resume-btn">
+                    <span>Download Resume</span>
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-download"></i>
+                    </div>
                 </a>
             </div>
             <div class="tech-stack">
@@ -1237,360 +1380,70 @@
                 <span class="tech-item">Generative AI</span>
             </div>
         </div>
-        <div class="hero-image"></div>
     </section>
-    
+
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
-        <h2 class="section-title">About Me <span>Me</span></h2>
+        <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-content">
             <div class="about-img">
                 <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna - DevOps Architect">
             </div>
             <div class="about-text">
-                <h3>DevOps + AI = Future</h3>
-                  <p>Building intelligent, scalable, and fully automated cloud infrastructures using <strong>AWS, Azure, Kubernetes, Terraform, Python</strong>, and cutting-edge <strong>Generative AI</strong>.</p>
-                  <p>From cloud-native CI/CD pipelines to end-to-end MLOps and LLM integration, I help businesses accelerate DevOps with AI at the core.</p>
-                 <br />
-    <p>💼 <strong>Professional Overview</strong></p>
-    <ul>
-      <li>Senior DevOps & MLOps Engineer passionate about unifying DevOps and AI.</li>
-      <li>Expert in: <strong>AWS, Azure, Kubernetes, Docker, Terraform, Python, Linux</strong></li>
-      <li>✔️ Building scalable, cloud-native architectures</li>
-      <li>✔️ Automating CI/CD pipelines</li>
-      <li>✔️ Implementing MLOps for full model lifecycle</li>
-      <li>✔️ Integrating Generative AI & LLMs into pipelines</li>
-      <li>✔️ End-to-end automation for infrastructure, AI, and cloud optimization</li>
-    </ul>
+                <!-- ... (keep existing about text content) ... -->
+            </div>
+        </div>
+    </section>
 
-    <br />
-    <p>⚙️ <strong>Services / What I Do</strong></p>
-    <ul>
-      <li>🔧 DevOps Engineering – CI/CD, Infra as Code, Monitoring</li>
-      <li>☁️ Cloud Automation – AWS & Azure</li>
-      <li>🤖 MLOps – Model Deployment, Monitoring & Scaling</li>
-      <li>🧠 Generative AI & LLM Integration</li>
-      <li>🐳 Docker & Kubernetes Orchestration</li>
-      <li>📜 Scripting – Python & Bash</li>
-      <li>🛠️ Infrastructure Automation – Terraform & Ansible</li>
-    </ul>
-  </div>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-cloud"></i> Cloud Expertise</h4>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fab fa-aws"></i>
-                                <span>AWS</span>
-                            </div>
-                           
-                        </div>
+    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <section class="certifications" id="certifications">
+        <h2 class="section-title">AWS <span>Certifications</span></h2>
+        <div class="certification-grid">
+            <div class="certification-card professional">
+                <div class="cert-badge">
+                    <img src="aws-solutions-architect-pro-badge.png" alt="AWS Certified Solutions Architect Professional">
+                    <div class="verified-badge">
+                        <i class="fas fa-check-circle"></i> Verified
                     </div>
-                    
-                    <div class="skill-category">
-                        <h4><i class="fas fa-robot"></i> AI/ML Integration</h4>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fas fa-brain"></i>
-                                <span>MLOps</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-project-diagram"></i>
-                                <span>LLM Pipelines</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>AI Monitoring</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="cert-details">
+                    <h3>Solutions Architect - Professional</h3>
+                    <div class="cert-meta">
+                        <span class="validation-id">
+                            <i class="fas fa-fingerprint"></i> Validation ID: d2a80620a35b4ffb86721154af7a8361
+                            <button class="copy-btn" data-clipboard-text="d2a80620a35b4ffb86721154af7a8361">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </span>
+                        <a href="https://aws.amazon.com/verification" target="_blank" class="verify-link">
+                            <i class="fas fa-external-link-alt"></i> Verify Credential
+                        </a>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="issue-date"><i class="far fa-calendar-alt"></i> Issued: May 2023</span>
+                        <span class="valid-until"><i class="fas fa-certificate"></i> Valid through May 2026</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-  <!-- ===== CERTIFICATIONS SECTION ===== -->
-<section class="certifications" id="certifications">
-    <h2 class="section-title">AWS <span>Certifications</span></h2>
-    
-    <div class="certification-grid">
-        <!-- Solutions Architect Professional -->
-        <div class="certification-card">
-            <div class="cert-badge">
-                <img src="aws-solutions-architect-pro-badge.png" alt="AWS Certified Solutions Architect Professional">
-                <div class="verified-badge">
-                    <i class="fas fa-check-circle"></i> Verified
-                </div>
-            </div>
-            <div class="cert-details">
-                <h3>Solutions Architect - Professional</h3>
-                <div class="cert-meta">
-                    <span class="validation-id">
-                        <i class="fas fa-fingerprint"></i> d2a80620a35b4ffb86721154af7a8361
-                        <button class="copy-btn" data-clipboard-text="d2a80620a35b4ffb86721154af7a8361">
-                            <i class="far fa-copy"></i>
-                        </button>
-                    </span>
-                    <a href="https://aws.amazon.com/verification" target="_blank" class="verify-link">
-                        <i class="fas fa-external-link-alt"></i> Verify Credential
-                    </a>
-                </div>
-                <div class="cert-footer">
-                    <span class="issue-date"><i class="far fa-calendar-alt"></i> Issued: May 2023</span>
-                    <span class="valid-until"><i class="fas fa-certificate"></i> Valid through May 2026</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    
+
     <!-- ===== EXPERIENCE SECTION ===== -->
-    <section class="experience" id="experience">
-        <h2 class="section-title">Professional <span>Journey</span></h2>
-        <div class="timeline">
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="date">2022 - Present</div>
-                    <h3>Senior DevOps Engineer</h3>
-                    <h4>Innominds Software Pvt. Ltd</h4>
-                    <p>Leading AI-powered DevOps transformations, implementing MLOps pipelines that reduced model deployment time by 70% while improving accuracy monitoring.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="date">2019 - 2022</div>
-                    <h3>Cloud Engineer Associate</h3>
-                    <h4>Deloitte</h4>
-                    <p>Architected AWS cloud solutions for enterprise clients, automating infrastructure provisioning that saved 300+ engineering hours annually.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ... (keep existing experience section) ... -->
 
-   <!-- ===== SKILLS SECTION ===== -->
-<section class="skills" id="skills">
-    <h2 class="section-title">Technical <span>Expertise</span></h2>
-    <div class="skills-container">
-        <!-- DevOps Tools -->
-        <div class="skill-category">
-            <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-docker"></i>
-                    <span>Docker</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-cube"></i>
-                    <span>Kubernetes</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-code-branch"></i>
-                    <span>Jenkins</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-cloud"></i>
-                    <span>Terraform</span>
-                </div>
-            </div>
-        </div>
+    <!-- ===== SKILLS SECTION ===== -->
+    <!-- ... (keep existing skills section) ... -->
 
-        <!-- AWS Specialization -->
-        <div class="skill-category">
-            <h3><i class="fab fa-aws"></i> AWS Expertise</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-server"></i>
-                    <span>EC2 & ECS</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>S3 & RDS</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-bolt"></i>
-                    <span>Lambda</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-network-wired"></i>
-                    <span>VPC</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- MLOps Stack -->
-        <div class="skill-category">
-            <h3><i class="fas fa-brain"></i> MLOps Stack</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>MLflow</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <span>Kubeflow</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-robot"></i>
-                    <span>TFX</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-eye"></i>
-                    <span>Evidently AI</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <!-- ===== PROJECTS SECTION ===== -->
-<section class="projects" id="projects">
-    <h2 class="section-title">Project <span>Highlights</span></h2>
-    
-    <!-- Project 1 - MLOps Pipeline -->
-    <div class="project-card">
-        <div class="project-card-inner">
-            <div class="project-card-front" style="background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%);">
-                <div class="project-tech-banner">
-                    <span>AWS SageMaker</span>
-                    <span>Kubernetes</span>
-                    <span>Terraform</span>
-                    <span>Prometheus</span>
-                </div>
-                <h3>AI-Driven MLOps Pipeline</h3>
-                <div class="project-meta">
-                    <span class="company">Innominds Software</span>
-                    <span class="role">Senior DevOps Engineer</span>
-                </div>
-                <div class="project-stats">
-                    <div><i class="fas fa-tachometer-alt"></i> 60% Faster</div>
-                    <div><i class="fas fa-dollar-sign"></i> 30% Savings</div>
-                </div>
-            </div>
-            <div class="project-card-back">
-                <h3><i class="fab fa-aws"></i> MLOps Transformation</h3>
-                <ul class="achievements">
-                    <li>Automated end-to-end model lifecycle reducing manual effort by 70%</li>
-                    <li>CI/CD pipeline improved model accuracy by 15%</li>
-                    <li>Real-time monitoring reduced incidents by 40%</li>
-                    <li>Containerized inference for hybrid cloud scalability</li>
-                </ul>
-                <div class="impact-stats">
-                    <div class="stat">
-                        <div class="stat-value">99.95%</div>
-                        <div class="stat-label">Uptime</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">$150K</div>
-                        <div class="stat-label">Annual Savings</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-               <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-card-inner">
-                    <div class="project-card-front">
-                        <img src="https://source.unsplash.com/600x400/?monitoring,dashboard,cloud" alt="Cloud Monitoring System">
-                        <div class="project-info">
-                            <h3>AI Cloud Monitoring</h3>
-                            <div class="project-meta">
-                                <span class="company">Deloitte</span>
-                                <span class="role">Cloud Engineer</span>
-                            </div>
-                            <div class="project-tech">
-                                <span>Grafana</span>
-                                <span>AWS Lambda</span>
-                                <span>Kubernetes</span>
-                                <span>Datadog</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card-back">
-                        <h3><i class="fas fa-heartbeat"></i> Auto-Healing System</h3>
-                        <ul class="project-contributions">
-                            <li>Reduced MTTR by <strong>50%</strong> with real-time monitoring</li>
-                            <li>AI anomaly detection for <strong>90%+</strong> CPU spikes</li>
-                            <li>Automated healing improved uptime to <strong>99.95%</strong></li>
-                        </ul>
-                        <div class="project-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>20% Cost Reduction</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-clock"></i>
-                                <span>$150K/yr Saved</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-project-diagram"></i> Architecture
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- ... (keep existing projects section) ... -->
 
     <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Let's Build the Future Together</h3>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>s.harikrishna.871@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 7993795316</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Hyderabad / Vijayawada, India</span>
-                </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/hari-devops" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/haridevops05" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:s.harikrishna.871@gmail.com" class="social-link">
-    <i class="fas fa-envelope"></i>
-</a>
-                </div>
-            </div>
-            <form action="https://formspree.io/f/s.harikrishna.5519@gmail.com" method="POST" class="contact-form">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="_replyto" required>
-    </div>
-    <div class="form-group">
-        <label for="message">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-</form>
-        </div>
-    </section>
+    <!-- ... (keep existing contact section) ... -->
 
     <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="copyright">
-            <p>&copy; 2024 Hari Krishna | AI DevOps Architect | All Rights Reserved</p>
-            <p>Made with <i class="fas fa-heart" style="color: #ff2d75;"></i> & <i class="fas fa-coffee" style="color: #6f4e37;"></i></p>
-        </div>
-    </footer>
+    <!-- ... (keep existing footer) ... -->
 
-       <script>
+    <script>
         // Typing Effect
         const typingText = document.getElementById('typing-text');
         const professions = [
@@ -1637,7 +1490,7 @@
             }
         });
 
-        // Generate Shooting Stars
+        // Shooting Stars Animation
         function createShootingStar() {
             const star = document.createElement('div');
             star.className = 'shooting-star';
@@ -1651,15 +1504,21 @@
             });
         }
 
-        // Create initial shooting stars
         setInterval(createShootingStar, 5000);
-    </script>
-    
-    <script>
-        // Your existing JavaScript code (typing effect, header scroll, etc.)...
 
-        // ===== FORM SUBMISSION HANDLER =====
-        // Add this NEW code right after your existing JavaScript:
+        // Clipboard Initialization
+        new ClipboardJS('.copy-btn');
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const originalHTML = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    this.innerHTML = originalHTML;
+                }, 2000);
+            });
+        });
+
+        // Form Submission Handler
         const form = document.querySelector('.contact-form');
         if (form) {
             form.addEventListener('submit', async (e) => {
@@ -1699,27 +1558,5 @@
             });
         }
     </script>
-     <script>
-        // Your existing JavaScript (typing effect, header scroll, etc.)...
-
-        // ===== COPY FUNCTIONALITY INITIALIZATION =====
-        // Add this NEW code right after your existing JavaScript:
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize clipboard.js
-            new ClipboardJS('.copy-btn');
-            
-            // Add visual feedback for copy buttons
-            document.querySelectorAll('.copy-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const originalHTML = this.innerHTML;
-                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    setTimeout(() => {
-                        this.innerHTML = originalHTML;
-                    }, 2000);
-                });
-            });
-        });
-    </script>
-    
 </body>
 </html>
