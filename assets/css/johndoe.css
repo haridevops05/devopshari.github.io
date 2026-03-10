@@ -11682,20 +11682,40 @@ pre .code {
   display: block;
   margin-top: 10px;
 }
-/* Anti-gravity floating effect */
+/* Anti Gravity Floating Effect */
 
-.float {
-  animation: float 6s ease-in-out infinite;
+.project-card,
+.skill-item,
+.certification-card {
+    animation: antiGravity 8s ease-in-out infinite;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.project-card:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.skill-item:nth-child(odd) {
+    animation-delay: 1s;
+}
+
+@keyframes antiGravity {
+    0% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotateZ(0.5deg);
+    }
+    50% {
+        transform: translateY(-15px) rotateZ(-0.5deg);
+    }
+    75% {
+        transform: translateY(-8px) rotateZ(0.3deg);
+    }
+    100% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
 }
