@@ -76,14 +76,36 @@
         .section-title { font-size: 3.5rem; text-align: center; margin-bottom: 80px; color: var(--light); position: relative; display: inline-block; left: 50%; transform: translateX(-50%); font-family: 'Oxanium', sans-serif; }
         .section-title span { color: var(--neon-blue); }
         .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--neon-blue), var(--cyber-purple)); }
-        .about-content { display: flex; justify-content: space-between; align-items: center; gap: 50px; }
-        .about-img { flex: 1; position: relative; perspective: 1000px; }
-        .about-img::before { content: ''; position: absolute; width: 100%; height: 100%; border: 3px solid var(--neon-blue); border-radius: 10px; top: 20px; left: 20px; z-index: -1; opacity: 0.7; }
-        .about-img img { width: 100%; max-width: 400px; border-radius: 10px; transform: rotateY(15deg); transition: var(--transition); box-shadow: 0 0 30px rgba(0, 247, 255, 0.3); }
-        .about-img:hover img { transform: rotateY(0deg); }
+        .about-content { display: flex; justify-content: space-between; align-items: flex-start; gap: 60px; }
+        /* ── Profile Image ── */
+        .about-img { flex: 0 0 320px; position: relative; display: flex; flex-direction: column; align-items: center; gap: 25px; }
+        .profile-pic-wrapper { position: relative; width: 260px; height: 260px; }
+        .profile-pic-wrapper img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 4px solid var(--neon-blue); box-shadow: 0 0 30px rgba(0,247,255,0.4), 0 0 60px rgba(188,19,254,0.2); animation: float 6s ease-in-out infinite; }
+        .profile-pic-wrapper::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 2px dashed rgba(0,247,255,0.3); animation: spin 10s linear infinite; }
+        .profile-pic-wrapper::after { content: ''; position: absolute; inset: -16px; border-radius: 50%; border: 1px dashed rgba(188,19,254,0.2); animation: spin 15s linear infinite reverse; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        /* ── Info Cards under photo ── */
+        .about-info-cards { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .info-card { background: rgba(0,247,255,0.05); border: 1px solid rgba(0,247,255,0.25); border-radius: 10px; padding: 12px 18px; text-align: center; min-width: 110px; transition: all 0.3s; }
+        .info-card:hover { border-color: var(--neon-blue); background: rgba(0,247,255,0.12); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,247,255,0.15); }
+        .info-card .ic-num { font-size: 1.6rem; font-weight: 700; color: var(--neon-blue); font-family: 'Oxanium', sans-serif; display: block; }
+        .info-card .ic-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* ── About Text ── */
         .about-text { flex: 1; }
-        .about-text h3 { font-size: 2rem; margin-bottom: 20px; color: var(--neon-blue); font-family: 'Oxanium', sans-serif; }
-        .about-text p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.6; }
+        .about-text h3 { font-size: 2.2rem; margin-bottom: 15px; color: var(--neon-blue); font-family: 'Oxanium', sans-serif; }
+        .about-text .tagline { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; border-left: 3px solid var(--cyber-purple); padding-left: 12px; font-style: italic; }
+        .about-text p { font-size: 1rem; margin-bottom: 14px; line-height: 1.7; color: rgba(255,255,255,0.85); }
+        /* ── What I Do Cards ── */
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+        .service-card { background: rgba(10,10,25,0.7); border: 1px solid rgba(0,247,255,0.15); border-radius: 10px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; transition: all 0.3s; }
+        .service-card:hover { border-color: var(--neon-blue); background: rgba(0,247,255,0.06); transform: translateX(4px); }
+        .service-card .sc-icon { font-size: 1.3rem; min-width: 26px; }
+        .service-card .sc-text strong { display: block; font-size: 0.9rem; color: var(--neon-blue); margin-bottom: 2px; }
+        .service-card .sc-text span { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+        /* ── Expertise Tags ── */
+        .expertise-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+        .expertise-tag { padding: 5px 13px; background: rgba(188,19,254,0.1); border: 1px solid rgba(188,19,254,0.3); border-radius: 20px; font-size: 0.78rem; color: rgba(255,255,255,0.8); transition: all 0.3s; }
+        .expertise-tag:hover { background: rgba(188,19,254,0.2); border-color: var(--cyber-purple); color: #fff; transform: translateY(-2px); }
 
         .certifications { padding: 150px 10% 100px; background-color: rgba(10, 10, 20, 0.7); text-align: center; display: flex; flex-direction: column; align-items: center; }
         .certification-header { text-align: center; margin-bottom: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
@@ -122,14 +144,22 @@
         .timeline-content p { font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
         .date { display: inline-block; padding: 5px 15px; background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple)); color: var(--dark-bg); border-radius: 30px; font-weight: 600; margin-bottom: 15px; font-size: 0.9rem; }
 
-        .skills { padding: 150px 10% 100px; background-color: rgba(10, 10, 20, 0.7); position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        .skills-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-        .skill-category { margin-bottom: 50px; width: 100%; max-width: 800px; }
-        .skill-category h3 { font-size: 2rem; margin-bottom: 30px; color: var(--neon-blue); display: flex; align-items: center; justify-content: center; gap: 15px; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-content: center; }
-        .skill-item { background: rgba(10, 10, 20, 0.9); padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 247, 255, 0.3); transition: var(--transition); display: flex; flex-direction: column; align-items: center; }
-        .skill-item:hover { transform: translateY(-5px); border-color: var(--neon-blue); box-shadow: 0 5px 15px rgba(0, 247, 255, 0.2); }
-        .skill-item i { font-size: 2rem; margin-bottom: 10px; color: var(--neon-blue); }
+        .skills { padding: 150px 10% 100px; background-color: rgba(10, 10, 20, 0.7); position: relative; text-align: center; }
+        .skills-container { max-width: 1200px; margin: 0 auto; width: 100%; }
+        /* ── Skill Category ── */
+        .skill-category { margin-bottom: 55px; }
+        .skill-category-header { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 25px; }
+        .skill-category-header h3 { font-size: 1.6rem; color: var(--neon-blue); font-family: 'Oxanium', sans-serif; }
+        .skill-category-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,247,255,0.4), transparent); max-width: 200px; }
+        /* ── Skill Grid ── */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .skill-item { background: rgba(10,10,25,0.85); padding: 14px 20px; border-radius: 10px; border: 1px solid rgba(0,247,255,0.2); transition: all 0.3s; display: flex; align-items: center; gap: 10px; min-width: 140px; }
+        .skill-item:hover { transform: translateY(-4px) scale(1.03); border-color: var(--neon-blue); box-shadow: 0 8px 25px rgba(0,247,255,0.2); background: rgba(0,247,255,0.07); }
+        .skill-item i { font-size: 1.3rem; color: var(--neon-blue); min-width: 22px; }
+        .skill-item span { font-size: 0.88rem; color: rgba(255,255,255,0.85); white-space: nowrap; }
+        /* ── Skill Level Bar ── */
+        .skill-level { height: 3px; background: rgba(0,247,255,0.15); border-radius: 3px; margin-top: 6px; overflow: hidden; }
+        .skill-level-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--neon-blue), var(--cyber-purple)); transition: width 1.5s ease; }
 
         /* ===== PROJECTS SECTION ===== */
         .projects { padding: 150px 10% 100px; background-color: rgba(5, 5, 15, 0.7); }
@@ -267,34 +297,94 @@
     <section class="about" id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-content">
+
+            <!-- Left — Profile + Stats -->
             <div class="about-img">
-                <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna - Senior DevOps Engineer">
+                <div class="profile-pic-wrapper">
+                    <img src="assets/imgs/Profile.jpeg" alt="Hari Krishna - Senior DevOps Engineer">
+                </div>
+                <div class="about-info-cards">
+                    <div class="info-card">
+                        <span class="ic-num">6+</span>
+                        <span class="ic-label">Years Exp</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="ic-num">2</span>
+                        <span class="ic-label">Companies</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="ic-num">2</span>
+                        <span class="ic-label">Awards</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="ic-num">1</span>
+                        <span class="ic-label">AWS Cert</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- Right — Text Content -->
             <div class="about-text">
                 <h3>Senior DevOps Engineer</h3>
-                <p>I am a Senior DevOps Engineer with 6+ years of experience designing, automating, and managing cloud-native infrastructure on AWS. I specialize in Kubernetes, Terraform, Jenkins, GitLab CI/CD, Docker, and Infrastructure as Code (IaC) to deliver scalable, secure, and highly available platforms.</p>
-                <p>I help engineering teams streamline deployments, improve reliability, enhance observability, and build strong DevOps foundations for modern applications.</p>
-                <br />
-                <p>💼 <strong>Professional Overview</strong></p>
-                <ul>
-                    <li>Senior DevOps Engineer focused on AWS cloud infrastructure & automation.</li>
-                    <li>Expert in: <strong>AWS, Kubernetes, Docker, Terraform, Jenkins, GitLab CI/CD, Python, Linux</strong></li>
-                    <li>✔️ Building scalable, cloud-native architectures</li>
-                    <li>✔️ Automating CI/CD pipelines for microservices</li>
-                    <li>✔️ Implementing observability with Datadog, Prometheus & CloudWatch</li>
-                    <li>✔️ Strengthening security via IAM, Secrets Manager & DevSecOps practices</li>
-                    <li>✔️ End-to-end automation for infrastructure and environment management</li>
-                </ul>
-                <br />
-                <p>⚙️ <strong>Services / What I Do</strong></p>
-                <ul>
-                    <li>🔧 DevOps Engineering – CI/CD, IaC, Release Automation</li>
-                    <li>☁️ Cloud Automation – AWS Infrastructure & Platform Engineering</li>
-                    <li>📡 Observability – Monitoring, Alerting & Logging (Datadog, CloudWatch)</li>
-                    <li>🐳 Containerization – Docker & Kubernetes Orchestration</li>
-                    <li>📜 Scripting – Python & Bash Automation</li>
-                    <li>🛠️ Infrastructure Automation – Terraform & Ansible</li>
-                </ul>
+                <p class="tagline">"Building reliable platforms that scale — from infrastructure to deployment to observability."</p>
+                <p>Senior DevOps Engineer with <strong>6+ years</strong> of experience designing, automating, and managing cloud-native infrastructure on <strong>AWS</strong>. Currently at <strong>Brillio</strong>, previously at <strong>Accenture</strong> — delivering production-grade platforms for enterprise and healthcare workloads.</p>
+                <p>I specialize in Kubernetes (EKS, KOPS, AKS), Terraform, Jenkins, GitLab CI/CD, and DevSecOps — backed by an <strong>AWS Solutions Architect Professional</strong> certification and real-world compliance experience (SOC2, HIPAA).</p>
+
+                <!-- Services Grid -->
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="sc-icon">🔧</span>
+                        <div class="sc-text">
+                            <strong>CI/CD Automation</strong>
+                            <span>Jenkins · GitLab CI · GitHub Actions</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <span class="sc-icon">☁️</span>
+                        <div class="sc-text">
+                            <strong>Cloud Infrastructure</strong>
+                            <span>AWS · Azure · Terraform · IaC</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <span class="sc-icon">🐳</span>
+                        <div class="sc-text">
+                            <strong>Container Orchestration</strong>
+                            <span>Kubernetes · Docker · Helm · KOPS</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <span class="sc-icon">🔐</span>
+                        <div class="sc-text">
+                            <strong>DevSecOps</strong>
+                            <span>Falco · Kyverno · Trivy · ESO</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <span class="sc-icon">📊</span>
+                        <div class="sc-text">
+                            <strong>Observability</strong>
+                            <span>Prometheus · Grafana · Datadog · EFK</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <span class="sc-icon">🔄</span>
+                        <div class="sc-text">
+                            <strong>GitOps & Service Mesh</strong>
+                            <span>ArgoCD · Argo Rollouts · Istio · Kiali</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expertise Tags -->
+                <div class="expertise-tags">
+                    <span class="expertise-tag">AWS SA Professional</span>
+                    <span class="expertise-tag">SOC2 Compliant</span>
+                    <span class="expertise-tag">HIPAA Compliant</span>
+                    <span class="expertise-tag">Immediate Joiner</span>
+                    <span class="expertise-tag">Remote / Hybrid</span>
+                    <span class="expertise-tag">Open to Relocation</span>
+                </div>
             </div>
         </div>
     </section>
@@ -359,33 +449,138 @@
     <section class="skills" id="skills">
         <h2 class="section-title">Technical <span>Expertise</span></h2>
         <div class="skills-container">
+
+            <!-- CI/CD & GitOps -->
             <div class="skill-category">
-                <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-sync-alt"></i> CI/CD & GitOps</h3>
+                    <div class="skill-category-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fas fa-code-branch"></i><span>Jenkins</span></div>
+                    <div class="skill-item"><i class="fab fa-gitlab"></i><span>GitLab CI/CD</span></div>
+                    <div class="skill-item"><i class="fab fa-github"></i><span>GitHub Actions</span></div>
+                    <div class="skill-item"><i class="fas fa-sync"></i><span>ArgoCD</span></div>
+                    <div class="skill-item"><i class="fas fa-ship"></i><span>Argo Rollouts</span></div>
+                    <div class="skill-item"><i class="fas fa-code"></i><span>GitOps</span></div>
+                </div>
+            </div>
+
+            <!-- Containers & Kubernetes -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-cubes"></i> Containers & Kubernetes</h3>
+                    <div class="skill-category-line"></div>
+                </div>
                 <div class="skills-grid">
                     <div class="skill-item"><i class="fab fa-docker"></i><span>Docker</span></div>
                     <div class="skill-item"><i class="fas fa-cube"></i><span>Kubernetes</span></div>
-                    <div class="skill-item"><i class="fas fa-code-branch"></i><span>Jenkins</span></div>
-                    <div class="skill-item"><i class="fas fa-cloud"></i><span>Terraform</span></div>
+                    <div class="skill-item"><i class="fas fa-dharmachakra"></i><span>AWS EKS</span></div>
+                    <div class="skill-item"><i class="fas fa-globe"></i><span>Azure AKS</span></div>
+                    <div class="skill-item"><i class="fas fa-cog"></i><span>KOPS</span></div>
+                    <div class="skill-item"><i class="fas fa-anchor"></i><span>Helm</span></div>
+                    <div class="skill-item"><i class="fas fa-layer-group"></i><span>Kustomize</span></div>
+                    <div class="skill-item"><i class="fas fa-project-diagram"></i><span>Istio</span></div>
                 </div>
             </div>
+
+            <!-- AWS Cloud -->
             <div class="skill-category">
-                <h3><i class="fab fa-aws"></i> AWS Expertise</h3>
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fab fa-aws"></i> AWS Cloud</h3>
+                    <div class="skill-category-line"></div>
+                </div>
                 <div class="skills-grid">
                     <div class="skill-item"><i class="fas fa-server"></i><span>EC2 & EKS</span></div>
-                    <div class="skill-item"><i class="fas fa-database"></i><span>S3 & RDS</span></div>
+                    <div class="skill-item"><i class="fas fa-database"></i><span>RDS & Aurora</span></div>
+                    <div class="skill-item"><i class="fas fa-hdd"></i><span>S3 & EFS</span></div>
                     <div class="skill-item"><i class="fas fa-bolt"></i><span>Lambda</span></div>
-                    <div class="skill-item"><i class="fas fa-network-wired"></i><span>VPC & Networking</span></div>
+                    <div class="skill-item"><i class="fas fa-network-wired"></i><span>VPC & TGW</span></div>
+                    <div class="skill-item"><i class="fas fa-balance-scale"></i><span>ALB & NLB</span></div>
+                    <div class="skill-item"><i class="fas fa-fire"></i><span>WAF & Firewall</span></div>
+                    <div class="skill-item"><i class="fas fa-key"></i><span>IAM & KMS</span></div>
+                    <div class="skill-item"><i class="fas fa-lock"></i><span>Secrets Manager</span></div>
+                    <div class="skill-item"><i class="fas fa-eye"></i><span>CloudWatch</span></div>
+                    <div class="skill-item"><i class="fas fa-dollar-sign"></i><span>Cost Optimization</span></div>
+                    <div class="skill-item"><i class="fas fa-route"></i><span>Route 53</span></div>
                 </div>
             </div>
+
+            <!-- IaC & Config Management -->
             <div class="skill-category">
-                <h3><i class="fas fa-eye"></i> Observability Stack</h3>
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-file-code"></i> IaC & Configuration</h3>
+                    <div class="skill-category-line"></div>
+                </div>
                 <div class="skills-grid">
-                    <div class="skill-item"><i class="fas fa-chart-line"></i><span>Datadog</span></div>
-                    <div class="skill-item"><i class="fas fa-project-diagram"></i><span>Prometheus</span></div>
-                    <div class="skill-item"><i class="fas fa-bell"></i><span>CloudWatch</span></div>
-                    <div class="skill-item"><i class="fas fa-clipboard-list"></i><span>Logging & Alerts</span></div>
+                    <div class="skill-item"><i class="fas fa-cloud"></i><span>Terraform</span></div>
+                    <div class="skill-item"><i class="fas fa-cogs"></i><span>Ansible</span></div>
+                    <div class="skill-item"><i class="fas fa-sitemap"></i><span>CloudFormation</span></div>
+                    <div class="skill-item"><i class="fab fa-microsoft"></i><span>ARM Templates</span></div>
+                    <div class="skill-item"><i class="fas fa-puzzle-piece"></i><span>Terraform Modules</span></div>
+                    <div class="skill-item"><i class="fas fa-server"></i><span>Remote State</span></div>
                 </div>
             </div>
+
+            <!-- Security & DevSecOps -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-shield-alt"></i> DevSecOps & Security</h3>
+                    <div class="skill-category-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fas fa-search"></i><span>Falco</span></div>
+                    <div class="skill-item"><i class="fas fa-gavel"></i><span>Kyverno</span></div>
+                    <div class="skill-item"><i class="fas fa-bug"></i><span>Trivy</span></div>
+                    <div class="skill-item"><i class="fas fa-clipboard-check"></i><span>Kube-Bench</span></div>
+                    <div class="skill-item"><i class="fas fa-key"></i><span>ESO</span></div>
+                    <div class="skill-item"><i class="fas fa-user-shield"></i><span>RBAC</span></div>
+                    <div class="skill-item"><i class="fas fa-network-wired"></i><span>Network Policies</span></div>
+                    <div class="skill-item"><i class="fas fa-certificate"></i><span>SOC2 & HIPAA</span></div>
+                </div>
+            </div>
+
+            <!-- Observability -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-chart-line"></i> Observability & Monitoring</h3>
+                    <div class="skill-category-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fas fa-chart-bar"></i><span>Prometheus</span></div>
+                    <div class="skill-item"><i class="fas fa-tachometer-alt"></i><span>Grafana</span></div>
+                    <div class="skill-item"><i class="fas fa-dog"></i><span>Datadog</span></div>
+                    <div class="skill-item"><i class="fas fa-bell"></i><span>AlertManager</span></div>
+                    <div class="skill-item"><i class="fas fa-search"></i><span>EFK Stack</span></div>
+                    <div class="skill-item"><i class="fas fa-project-diagram"></i><span>Jaeger Tracing</span></div>
+                    <div class="skill-item"><i class="fas fa-sitemap"></i><span>Kiali</span></div>
+                    <div class="skill-item"><i class="fas fa-eye"></i><span>New Relic</span></div>
+                </div>
+            </div>
+
+            <!-- Scripting & Languages -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-line"></div>
+                    <h3><i class="fas fa-terminal"></i> Scripting & Languages</h3>
+                    <div class="skill-category-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="skill-item"><i class="fas fa-terminal"></i><span>Bash / Shell</span></div>
+                    <div class="skill-item"><i class="fas fa-code"></i><span>YAML</span></div>
+                    <div class="skill-item"><i class="fas fa-file-code"></i><span>JSON</span></div>
+                    <div class="skill-item"><i class="fab fa-aws"></i><span>Boto3</span></div>
+                    <div class="skill-item"><i class="fab fa-linux"></i><span>Linux / RHEL</span></div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -605,13 +800,13 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Let's Build Reliable Platforms</h3>
-                <div class="info-item"><i class="fas fa-envelope"></i><span>s.harikrishna.1205@gmail.com</span></div>
+                <div class="info-item"><i class="fas fa-envelope"></i><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="becd90d6dfccd7d5ccd7cdd6d0df908f8c8e8bfed9d3dfd7d290ddd1d3">[email&#160;protected]</a></span></div>
                 <div class="info-item"><i class="fas fa-phone"></i><span>+91 9491370132</span></div>
                 <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Hyderabad / Vijayawada, India</span></div>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/hari-devops" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/haridevops05" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="mailto:s.harikrishna.1205@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    <a href="/cdn-cgi/l/email-protection#3b4815535a49525049524853555a150a090b0e7b5c565a525715585456" class="social-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <form action="https://formspree.io/f/s.harikrishna.5519@gmail.com" method="POST" class="contact-form">
@@ -639,7 +834,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const typingText = document.getElementById('typing-text');
         const professions = ['Senior DevOps Engineer', 'AWS Cloud Engineer', 'Kubernetes Specialist', 'CI/CD Automation Expert', 'DevSecOps Engineer'];
         let professionIndex = 0, charIndex = 0;
@@ -703,12 +898,4 @@
                         form.reset();
                         setTimeout(() => { submitBtn.innerHTML = originalText; submitBtn.disabled = false; }, 3000);
                     } else { throw new Error('Failed'); }
-                } catch (error) {
-                    submitBtn.innerHTML = '<i class="fas fa-times"></i> Error';
-                    setTimeout(() => { submitBtn.innerHTML = originalText; submitBtn.disabled = false; }, 3000);
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+           
